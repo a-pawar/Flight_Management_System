@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeLeaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/css/seat.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/css/paymentStyle.css}" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+     <link rel="stylesheet" th:href="@{/css/services.css}">
+     <link rel="stylesheet" th:href="@{/css/contact.css}">
+     <link rel="stylesheet" th:href="@{/css/profile.css}">
+    
+        <title>Responsive</title>
+        
+         <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    /> 
+    
+         <link rel="stylesheet" th:href="@{/css/tailwindcss-colors.css}">
+         <link rel="stylesheet" th:href="@{/css/reciept-style.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+
+        <link th:href="@{/css/shopping.css}" rel="stylesheet" type="text/css"/>
+        <!-- ======= Styles ====== -->
+        <style>
+            /* =========== Google Fonts ============ */
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+    
+    /* =============== Globals ============== */
+    * {
+      font-family: "Ubuntu", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    
+    input[type=date]:required:invalid::-webkit-datetime-edit {
+        color: transparent;
+    }
+    input[type=date]:focus::-webkit-datetime-edit {
+        color: black !important;
+    }
+    
+    :root {
+      --primary-color: #3d5cb8;
+      --primary-color-dark: #334c99;
+      --text-dark: #0f172a;
+      --text-light: #64748b;
+      --extra-light: #f1f5f9;
+      --white: #ffffff;
+      --max-width: 1200px;
+    }
+    
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    
+    .section__container {
+      
+      margin: auto;
+      padding: 5rem 1rem;
+    }
+    
+    .section__header {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: 3rem;
+      color: var(--text-dark);
+    }
+    
+    .button {
+        padding: 2rem;
+      outline: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+      border-radius: 5px;
+      cursor: pointer;
+      
+      background:linear-gradient(to right,#ff105f,#ffad06);
+      border-radius: 30px;
+      transition: .5s;
+      
+    }
+    
+    .button:hover {
+      background-color: var(--primary-color-dark);
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    img {
+      width: 100%;
+      display: flex;
+      
+    }
+    
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    
+    
+    
+    
+    .booking__container {
+      border-radius: 3rem;
+      border: 1px solid var(--extra-light);
+      box-shadow: 51px 5px 30px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      margin:15px;
+      margin-top:10%;
+    }
+    
+    
+    .booking__nav {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      background:linear-gradient(to right,#ff105f,#ffad06);
+      border-radius: 30px;
+      transition: .5s;
+    }
+    
+    .booking__nav span{
+      flex: 1;
+      padding: 1rem 2rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-align: center;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .booking__nav span:nth-child(1) {
+      color: var(--white);
+      background-color: var(--primary-color);
+      background:linear-gradient(to right,#ff105f,#ffad06);
+      border-radius: 30px;
+      transition: .5s;
+      
+    }
+    .booking__nav span.active {
+      /* Styles when the span is active (clicked) */
+      color: var(--white);
+      background-color: var(--primary-color);
+      background:linear-gradient(to right,#ff105f,#ffad06);
+      border-radius: 30px;
+      transition: .5s;
+    }
+    
+    .booking__container form {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr) auto;
+      gap: 1rem;
+    }
+    
+    .booking__container .input__content {
+      width: 100%;
+    }
+    
+    .booking__container .form__group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .booking__container .form__group span {
+      padding: 10px;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+      background-color: var(--extra-light);
+      border-radius: 1rem;
+    }
+    
+    .booking__container .input__group {
+      width: 100%;
+      position: relative;
+    }
+    
+    .booking__container label {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      pointer-events: none;
+      transition: 0.3s;
+    }
+    
+    .booking__container input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 1rem;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid var(--primary-color);
+      color: var(--text-dark);
+    }
+    
+    .booking__container input:focus ~ label {
+      font-size: 0.8rem;
+      top: 0;
+    }
+    
+    .booking__container .form__group p {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    
+    .booking__container .form__group__dup {
+      margin-top: 0.5rem;
+      font-size: 1.0rem;
+      color: var(--text-light);
+      display: flex;
+        align-items: center;
+    }
+    
+    .booking__container .button {
+      padding: 1rem;
+      font-size: 1.5rem;
+      width:100
+    }
+    
+    
+    
+    :root {
+      --blue: #2a2185;
+      --white: #fff;
+      --gray: #f5f5f5;
+      --black1: #222;
+      --black2: #999;
+    }
+    
+    body {
+      min-height: 100vh;
+      
+    }
+    
+    .container {
+      position: relative;
+      width: 100%;
+    }
+    
+    /* =============== Navigation ================ */
+    .header{
+      
+      
+      height: 100%;
+      background: #fff;
+      width:100%;
+      /* border-left: 10px solid var(--blue); */
+      transition: 0.5s;
+      overflow: hidden;
+      text-align: center;
+      align-items: center;
+      color:black;
+      padding: 10px ;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      display: flex;
+      
+    }
+    
+    .footer {
+        position: fixed;
+      width: 100%;
+      height: 7%;
+      bottom:0;
+      background: var(--black1);
+      border-left: 10px solid var(--black1);
+      transition: 0.5s;
+      overflow: hidden;
+     
+      color:white;
+      padding: 10px;
+        }
+    .navigation {
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      background: var(--blue);
+      border-left: 10px solid var(--blue);
+      transition: 0.5s;
+      overflow: hidden;
+    }
+    .navigation.active {
+      width: 80px;
+    }
+    
+    .navigation ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    
+    .navigation ul li {
+      position: relative;
+      width: 100%;
+      list-style: none;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+    }
+    
+    
+    .navigation ul li:nth-child(1) {
+      margin-bottom: 40px;
+      pointer-events: none;
+    }
+    
+    .navigation ul li a {
+      position: relative;
+      display: block;
+      width: 100%;
+      display: flex;
+      text-decoration: none;
+      color: var(--white);
+    }
+    
+    .navigation ul li a .icon{
+      position: relative;
+      display: block;
+      min-width: 60px;
+      height: 60px;
+      line-height: 75px;
+      text-align: center;
+    }
+    
+    .navigation ul li a img{
+      position: relative;
+      display: block;
+      min-width: 60px;
+      height: 60px;
+      line-height: 75px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .icon{
+    
+    }
+    .navigation ul li a .icon ion-icon {
+      font-size: 1.75rem;
+    }
+    
+    .navigation ul li a .title {
+      position: relative;
+      display: block;
+      padding: 0 10px;
+      height: 60px;
+      line-height: 60px;
+      text-align: start;
+      white-space: nowrap;
+    }
+    
+   
+    
+    /* ===================== Main ===================== */
+    .main {
+      position: absolute;
+      width: calc(100% - 300px);
+      left: 300px;
+      min-height: 100vh;
+      
+      transition: 0.5s;
+    }
+    .main.active {
+      width: calc(100% - 80px);
+      left: 80px;
+    }
+    
+    .topbar {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+    
+    .toggle {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    
+    
+    
+    .user {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .user img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    body{
+        background: #ebe9e9;
+        
+    }
+    
+    
+    
+    
+    .hero {
+                    height: 150%;
+                    width: 100%;
+                    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg'); */
+                   margin-top:-30px;
+                    background-position: center;
+                    background-size: cover;
+                    position: absolute;
+                }
+                .form-box{
+                    width:400px;
+                    height:600px;
+                    position: relative;
+                    margin:6% auto;
+                    background:#fff;
+                    padding:5px;
+                    
+                    overflow: hidden;
+                    border-radius: 50px;
+                }
+                .button-box{
+                    width:220px;
+                    margin:35px auto;
+                    position: relative;
+                    box-shadow: 0 0 20px 9px #ff61241f;
+                    border-radius: 30px;
+                }
+    
+                .toggle-btn{
+                    cursor: pointer;
+                    background: transparent;
+                    outline:none;
+                    border:0;
+                    padding:10px 30px;
+                    position: relative;
+                }
+                #btn{
+                    top:0;
+                    left:0;
+                    position: absolute;
+                    width:110px;
+                    height:100%;
+                    background:linear-gradient(to right,#ff105f,#ffad06);
+                    border-radius: 30px;
+                    transition: .5s;
+                }
+                .social-icons{
+                    margin:30px auto;
+                    text-align: center;
+                }
+                .social-icons img{
+                    width:30px;
+                    margin:0 12px;
+                    box-shadow: 0 0 20px 0 #7f7f7f3d;
+                    cursor: pointer;
+                    border-radius: 50% ;
+                }
+    
+                .input-group{
+                    top:180px;
+                    position: absolute;
+                    width:280px;
+                    transition:.5s;
+                }
+    
+                .input-field{
+                    width:100%;
+                    padding:10px 0;
+                    margin:10px 0;
+                    border-left:0;
+                    border-right:0;
+                    border-top:0;
+                    border-bottom:1px solid #999;
+                    outline: none;
+                    background: transparent;
+                }
+    
+                .submit-btn{
+                    width:85%;
+                    padding:10px 30px;
+                    cursor: pointer;
+                    display: block;
+                    margin:auto;
+                    background:linear-gradient(to right,#ff105f,#ffad06);
+                    border:0;
+                    outline:none;
+                    border-radius: 30px;
+                }
+    
+                .check-box{
+                    margin:30px 10px 30px 0;
+    
+                }
+    
+                .sp{
+                    color:#777;
+                    font-size: 12px;
+                    bottom:94px;
+                    position: absolute;
+                }
+    
+                #login{
+                    left:50px;
+                }
+                #register{
+                    left:450px;
+                }
+    
+    
+                .input-wrapper {
+        position: relative;
+        
+    }
+    
+    .input-wrapper i {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+    }
+    
+    .input-wrapper input[type="text"],
+    .input-wrapper input[type="password"] {
+        padding-left: 30px; 
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+       
+    }
+    
+    .input-wrapper input[type="text"]:focus,
+    .input-wrapper input[type="password"]:focus {
+        border-color: #007bff;
+    }
+    
+    
+    .input-wrapper input[type="email"] {
+        padding-left: 30px; 
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+        
+    }
+    
+    .input-wrapper input[type="email"]:focus {
+        border-color: #007bff; 
+    }
+    
+    .input-wrapper input[type="date"] {
+        padding-left: 30px; 
+        width: 100%;
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+    
+    }
+    
+    .input-wrapper input[type="date"]:focus {
+        border-color: #007bff; 
+    }
+    
+    #message,#message2{
+        position: absolute;
+        
+        color:black;
+        font-size: 12px;
+        display: none;
+    }
+    
+    .custom-alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+        
+        
+        
+        <!-- popup message styling starts-->
+        
+        .msg-container{
+            width:100%;
+            height:100vh;
+            background:#3c5077;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .msg-btn{
+            padding:10px 60px;
+            background: #fff;
+            border:0;
+            outline:none;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 500;
+            border-radius: 30px;
+          }
+          .popup{
+            top:0;
+            left:50%;
+            transform: translate(-50%,-50%) scale(0.1);
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            
+          }
+          
+    
+          .open-popup{
+            visibility: visible;
+            top:50%;
+            transform: translate(-50%,-50%) scale(1);
+          }
+    
+          
+    
+          .form__group {
+        display: flex;
+        align-items: center;
+    }
+    
+    .form__group span {
+        margin-right: 10px;
+    }
+    
+    .input__content {
+        position: relative;
+    }
+    
+    .input__group input {
+        width: 100%;
+    }
+    
+    .keywords,.keywords2 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        overflow: auto; /* Add scrollbar when needed */
+        max-height: 150px; /* Adjust the max-height as needed */
+        overflow-y: auto; /* Always display scrollbar */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color:#0f172a;
+        padding: 0;
+        margin: 0;
+        display: none; /* Initially hide the dropdown */
+    }
+    
+    .keywords ul,.keywords2 ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .keywords ul li,.keywords2 ul li {
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+    
+    .keywords ul li:hover,.keywords2 ul li:hover {
+      background:var(--primary-color); 
+      color:#fff;
+    }
+    
+    .button-container {
+                text-align: center;
+            }
+    
+            
+            
+            
+            
+            
+            
+            .card-container {
+                
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping to next row */
+        gap: 20px; /* Space between cards */
+        justify-content: center; /* Center cards with suitable gap */
+    }
+    
+    .card-container .card {
+        
+        width: 100%; /* Three columns layout */
+        background: #fff;
+        text-align: center;
+        padding: 15px 30px 30px 30px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+    
+    
+            .card-container .card .top {
+                height: 130px;
+                background: red;
+                color: #fff;
+                padding: 12px 0 0 0;
+                clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+            }
+    
+            .card-container .card .top .title {
+                font-size: 27px;
+                font-weight: 600;
+            }
+    
+            .card-container .card .top .price-sec {
+                margin-top: 2px;
+            }
+    
+            .card-container .card .top .price-sec .price {
+                font-size: 40px;
+            }
+    
+            .card-container .card .info {
+                font-size: 16px;
+                margin-top: 20px;
+            }
+    
+            .card-container .card .details .plan,.card-container .card .details .plans{
+                margin-top: 25px;
+                font-size: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+    
+            .card-container .card .details .plan::before,.card-container .card .details .plans::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height:1px;
+                background: #ddd;
+                left: 0;
+                top: -12px;
+            }
+    
+            .card-container .card .plan i,.card-container .card .plans i{
+                color: #2db94d;
+            }
+    
+            .card-container .card .plan i.fa-times, .card-container .card .plans i.fa-times {
+                color: #cd3241;
+            }
+    
+            .card-container .card button {
+                outline: none;
+                border: none;
+                height: 42px;
+                display: block;
+                margin-top: 30px;
+                width: 100%;
+                background: red;
+                border-radius: 3px;
+                letter-spacing: 1px;
+                font-size: 18px;
+                color: #fff;
+                cursor: pointer;
+                
+            }
+            
+            /* Apply different background colors using nth-child selector */
+    .card-container .card:nth-child(3n+1) .top,
+    .card-container .card:nth-child(3n+1) button {
+        background: #14eb6e;
+    }
+    
+    .card-container .card:nth-child(3n+2) .top,
+    .card-container .card:nth-child(3n+2) button {
+        background: #e87130;
+    }
+    
+    .card-container .card:nth-child(3n+3) .top,
+    .card-container .card:nth-child(3n+3) button {
+        background: #11BCC3;
+    }
+    
+    .dollar,.decimal{
+    font-size:20px;
+    }
+    .light-bg {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    
+    #footer.active{
+      filter: blur(0px);
+      pointer-events: none;
+      user-select: none;
+    }
+    
+    #travellerSection.active,#flightsSection.active,#foodSection.active,#priceSummary.active,#popup.active{
+      filter: blur(5px);
+      pointer-events: none;
+      user-select: none;
+    }
+    
+    
+    
+    
+    
+    
+    .hidden{
+      display:none;
+    }
+    
+    #myForm{
+      background: #f0f0f0;
+      margin-top:-5px;
+      margin-bottom: -5px;
+    }
+    
+    
+    p{
+      text-align: justify;
+    }
+    
+    #toBeAdded_2,#toBeAdded_3,#toBeAdded_4,#toBeAdded{
+      display: none;
+    }
+    
+    #toBeAdded.active,#toBeAdded_2.active,#toBeAdded_3.active,#toBeAdded_4.active{
+      display: block;
+    }
+    
+    
+    .delete-icon{
+      cursor: pointer;
+    
+    }
+    
+    
+    #redirectButton{
+      background-color: black;
+      color:#fff;
+      border: none;
+      cursor: pointer;
+      height:100%;
+      width:100%;
+      font-size:17px;
+      
+    }
+
+
+
+
+#modalbox{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:380px;
+    height: 400px;
+    max-width: 450px;
+    padding: 80px 60px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    display: none;
+    
+    
+}
+
+.cookies{
+    width: 180px;
+    height:120px;
+    margin-bottom: 30px;
+    margin-left:80px;
+
+}
+
+#continueButton{
+    background: #6fd649;
+    color: #fff;
+    padding: 15px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    height:50px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-top: 35px;
+
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+
+}
+
+.close-pop{
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    top:25px;
+    right: 25px;
+    cursor: pointer;
+    
+    background: rgb(34, 32, 32);
+    
+}
+
+.wantToSkip{
+    color: blue;
+    font-size: 20px;
+}
+
+.rule {
+    border: 0; /* Remove default border */
+    background-color: rgb(190, 184, 184);
+    height: 0.5px; /* Set height of the line */
+  }
+  
+  
+  #continueButton{
+    background: #6fd649;
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 120px;
+    
+    height:45px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-top: 35px;
+
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    margin-left:5px;
+    margin-right:10px;
+
+}
+  
+  #skipButton{
+  
+  background: #ff5945;
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    width: 120px;
+    height:45px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-top: 35px;
+    
+    align-items:center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    background: #2196f3;
+  }
+  #skipButton:hover,#continueButton:hover{
+  height:50px;
+  }
+  
+  
+  #foodSection,#priceSummary{
+    display:block;
+  }
+  
+  #loader{
+  display:none;
+  }
+
+
+
+
+.loader-section{
+    display: flex;
+
+    height: 100vh;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.loader-section .dots span{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: #4070f4;
+    border-radius: 50%;
+    transform: rotate(calc(var(--i) * (360deg / 15)))  translateY(35px);
+    animation: animate 1.5s linear infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+    opacity: 0;
+    
+}
+
+@keyframes animate{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#aboutUs,#service-section,#contact-section{
+        display:none;
+      }
+
+.profile-dropdown {
+  position: relative;
+  width: fit-content;
+  position: relative;
+  overflow:hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black);
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: var(--secondary-light-2);
+  box-shadow: var(--shadow);
+}
+
+
+.profile-dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+.profile-dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: max-height 0.5s;
+  z-index: 9999; /* Ensure this is higher than other elements */
+}
+
+.profile-dropdown-list hr {
+  border: 0.5px solid var(--green);
+}
+
+.profile-dropdown-list.active {
+  max-height: 500px;
+  
+}
+
+
+.profile-dropdown-list-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+.profile-dropdown-list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.profile-dropdown-list-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+  background:linear-gradient(-45deg,#4481eb,#04befe);
+}
+
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+:root {
+  --primary: #eeeeee;
+  --secondary: #227c70;
+  --green: #82cd47;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --secondary-light-2: rgb(127, 183, 126, 0.1);
+  --white: #fff;
+  --black: #393e46;
+
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
+}
+
+.profile-dropdown-list-item:hover {
+  padding-left: 1.5rem;
+  background: linear-gradient(-45deg, #7aaeff, #5ad4ff);
+  
+}
+ 
+#profile{
+   margin-left:35%;
+   margin-top:20px;
+   display:none;
+}
+
+
+.hidden {
+            display: none;
+        }
+
+
+body.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
+
+   
+    
+
+
+    </style>
+    
+    
+    <script th:inline="javascript">
+        function redirectToProfileValidation() {
+        
+            // Check if the redirection has already occurred
+            
+            if (!sessionStorage.getItem('suyashKhare')) {
+            
+                sessionStorage.setItem('suyashKhare', 'true');
+                
+                
+                
+                
+                window.location.href = '/profile_validation';
+            }
+            
+            else{
+                /*<![CDATA[*/
+        var storedEmail = /*[[${stored_email}]]*/ '';
+        var storedDob = /*[[${stored_dob}]]*/ '';
+        var userNames = /*[[${userName}]]*/ '';
+        /*]]>*/
+        console.log(storedEmail);   
+        // Check if all values are not null, not empty, and exist
+        if (storedEmail && storedDob && userNames) {
+            console.log("chala");   
+            sessionStorage.setItem('stored_email', storedEmail);
+            sessionStorage.setItem('stored_dob', storedDob);
+            sessionStorage.setItem('userName', userNames);
+        }
+        
+       
+            
+            }
+            
+            
+        }
+        
+        window.onload = redirectToProfileValidation();
+    </script>  
+    
+  </head>
+  <body onload="showModal()">
+
+    <!-- =============== Navigation ================ -->
+    <div class="container" id="back">
+        <div class="navigation" id="nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                           
+                           <img  th:src="@{/Images/departures.png}" alt="Facebook"/>
+
+                        </span>
+                        <span class="title">FlyHighHub.com</span>
+                    </a>
+                </li>
+
+                <li  id="default" onclick="dashboard();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li onclick="about();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">About Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="service();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="construct-outline"></ion-icon>
+                        </span>
+                        <span class="title">Our Services</span>
+                    </a>
+                </li>
+
+                <li onclick="contact();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Contact Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="signout();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline" ></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+
+            <div class="topbar" >
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="header">
+                    <span >
+                        <i class="fa fa-plane" style="font-size:30px;"><strong>Flight Management System</strong></i> 
+                    </span>
+                    <div onclick="toggle_function()" class="user profile-dropdown" style="width:50px;height:50px;z-index:2222;">
+                       <div  class="profile-dropdown-btn">
+                        <img th:src="@{/Images/e.png}" alt="Facebook"/>
+                       </div>
+                    </div>
+                </div>
+
+                
+        </div>
+        
+        
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item" onclick="profile();">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-envelope"></i>
+              Inbox
+            </a>
+          </li>
+
+          
+
+          <li class="profile-dropdown-list-item" onclick="toggleMode();">
+            <a href="#">
+            
+             <span id="dark-mode" style="display: block;">
+               <i class="fa-solid fa-moon"></i>
+                 Dark Mode
+             </span>
+             
+             <span id="light-mode" style="display: none;">
+                   <i class="fa-solid fa-sun"></i>
+                   Light Mode
+             </span>
+
+             
+            </a>
+          </li>
+          
+ <script>
+ 
+    const darkModeText = document.getElementById('dark-mode');
+    const lightModeText = document.getElementById('light-mode');
+    
+    function toggleMode() {
+        // Toggle dark mode class on the body
+        document.body.classList.toggle('dark-mode');
+        
+        if (darkModeText.style.display === "none") {
+           darkModeText.style.display = "block";
+           lightModeText.style.display = "none";
+        } else {
+           darkModeText.style.display = "none";
+           lightModeText.style.display = "block";
+        }
+     }
+    
+ </script> 
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+</ul>
+      
+      
+      <script>
+        let profileDropdownList = document.querySelector(".profile-dropdown-list");
+let btn = document.querySelector(".profile-dropdown-btn");
+
+let classList = profileDropdownList.classList;
+
+console.log(classList);
+
+const toggle_function = () => classList.toggle("active");
+
+window.addEventListener("click", function (e) {
+
+  
+
+  if (!btn.contains(e.target)) classList.remove("active");
+  
+});
+
+    </script>
+    
+    
+     
+   <!-- ========================= Profile Section ==================== -->
+    
+    
+    <div id="profile">
+    <div class="profile-card"  style="align-items:center; justify-content:center;">
+      <div class="image" style="margin-top: 70px;">
+        <img th:src="@{/Images/e.png}" alt="" class="profile-img" />
+        
+      </div>
+
+      <br>
+
+      <div class="text-data">
+      
+        <span class="name"></span>
+        
+        <script th:inline="javascript">
+           /*<![CDATA[*/
+           var userNamep = sessionStorage.getItem('userName');
+           var capitalizedUserName = userNamep.charAt(0).toUpperCase() + userNamep.slice(1);
+    
+           document.querySelector('.name').textContent = 'Hello ' + capitalizedUserName;
+           
+           /*]]>*/
+        </script>
+        
+      </div>
+
+      <div class="text-data " style="margin-top: 30px;">
+
+
+<form id="to_submit" th:action="@{update_details_of_profile}" method="POST">
+        <div class="beautiful-div">
+    <div class="entryarea">
+        <input type="text" name="updated_name" class="lele-input">
+        <div class="labelline" style="margin-left: 8px;">Username</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" type="email" style="pointer-events: none;cursor: not-allowed;">
+        <div class="labelline" style="margin-left: 8px;">Email</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" name="updated_dob" type="date" style="display:block">
+        <div class="labelline" style="margin-left: 8px;">Date of birth</div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    // Retrieve values from sessionStorage
+    var userName = sessionStorage.getItem('userName');
+    var storedEmail = sessionStorage.getItem('stored_email');
+    var storedDob = sessionStorage.getItem('stored_dob');
+
+    // Set values in the corresponding input fields
+    document.querySelector('.lele-input[type="text"]').value = userName;
+    document.querySelector('.lele-input[type="email"]').value = storedEmail;
+    document.querySelector('.lele-input[type="date"]').value = storedDob;
+    /*]]>*/
+</script>
+
+        
+      </div>
+
+
+
+
+      <div class="buttonsp">
+        <button type="submit" id="updateDetails-btn" class="buttonp">Update</button>
+      </div>
+
+</form>
+
+<script>
+    var tu = document.getElementById("updateDetails-btn");
+    var fg = document.getElementById("to_submit");
+    tu.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        swal({
+	  title: "Are you sure?",
+	  text: "You want to update your details?",
+	  icon: "warning",
+	  buttons: true,
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	
+	  if (willDelete) {
+	     sessionStorage.removeItem("suyashKhare");
+         fg.submit();
+	  } 
+	  
+	  else {
+		swal("Your details are safe!");
+	  }
+	});
+	
+        
+    });
+</script>
+
+
+      <div class="media-buttons">
+        <a href="#" style="background: #4267b2" class="link">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="#" style="background: #1da1f2" class="link">
+          <i class="bx bxl-twitter"></i>
+        </a>
+        <a href="#" style="background: #e1306c" class="link">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="#" style="background: #ff0000" class="link">
+          <i class="bx bxl-youtube"></i>
+        </a>
+      </div>
+
+      
+
+      
+    </div>
+    
+    </div>        
+        <!-- ========================= Contact Us ==================== -->
+        
+<section class="contact-section" id="contact-section" style="margin:20px;">       
+        <div class="contact-container">
+      <span class="big-circle"></span>
+      <img th:src="@{/Images/contact-images/shape.png}" class="square" alt="" />
+      <div class="form-for-contact" style="margin-top:-80px;">
+        <div class="contact-info">
+          <h3 class="contact-title">Let's get in touch</h3>
+          <p class="text">
+            
+To share your feedback/complaints/suggestions or to reach out to our Customer Experience Team.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img th:src="@{/Images/contact-images/location.png}" class="icon" alt="" />
+              <p>92 Cherry Drive Uniondale, NY 11553</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/email.png}" class="icon" alt="" />
+              <p>lorem@ipsum.com</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/phone.png}"  class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="contact-social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id="contact-form-hun" th:action="@{/contact_support}" method="POST" autocomplete="off">
+            <h3 class="contact-title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="contact_name" class="input" />
+              <label for="">Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="contact_email" class="input" />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="contact_phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="contact_message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <script>
+
+
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+    </script>
+        
+         <!-- ========================= Our Services ==================== -->
+         
+         <section class="service-section" id="service-section" style="margin:20px;max-height:700px;overflow-y:auto;">
+      <div class="services-row">
+        <center><h1 class="section-heading" style="font-size:30px;margin-left:20px;color: #2c7bfe;text-decoration:underline;">Our Services:</h1></center>
+      </div>
+      <br>
+      <div class="services-row">
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-plane"></i>
+            </div>
+            <h3 class="heading-3">Flight Booking</h3>
+            <p class="para">
+                Book flights to numerous domestic and international destinations with ease.
+                Access to a wide range of dates to fit your schedule and budget.
+
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="heading-3">Group Bookings</h3>
+            <p class="para">
+                Specialized services for corporate clients, including bulk bookings and corporate discounts.
+                Avail of special discounts and services for group travel.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3 class="heading-3">Secure Payment Options</h3>
+            <p class="para">
+                Pay securely using credit cards, debit cards, and other payment methods.
+                Your payment information is protected with advanced security measures.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3 class="heading-3">Booking Management</h3>
+            <p class="para">
+                Modify or cancel your bookings effortlessly through our user-friendly platform.
+                Receive your e-tickets via email and access them anytime, anywhere.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="heading-3">Travel Insurance</h3>
+            <p class="para">
+                Protect your trip with travel insurance covering cancellations, medical emergencies, and more.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="heading-3">Customer Support</h3>
+            <p class="para">
+                Our dedicated support team is available around the clock to assist you with any queries or issues.
+                Get instant help through our live chat feature for quick resolutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+         <!-- ========================= About Us ==================== -->
+         
+      <section id="aboutUs" style="background:#fff;margin:20px;">
+        <div class="heading">  
+            <h1>About Us</h1>  
+            <p>  
+              FlyHighHub.com is one of the leading travel organisations in India, aiming to offer exclusive travel services to diverse explorers.  
+            </p>  
+        </div>  
+        
+       <div class="about-container">  
+           <section class="about">  
+             <div class="about-image">  
+               <img th:src="@{Images/suyash.jpg}">  
+             </div>  
+       <div class="abou-content">  
+         <h2>Established in 2008: Pioneering India's Online Travel Landscape</h2>  
+         <p> Established in 2008,  FlyHighHub.com is India’s second-largest* online travel platform.  
+            Operating initially from a small space, we overcame challenges through determination and familial support, evolving into a resilient entity ensuring financial stability. Transitioning to a customer-facing model in 2011, we adopted a 'no convenience fee' policy, attracting a loyal customer base with transparent pricing and exceptional service.
+         </p>  
+         <a href="" class="read-more" >Read More</a>  
+       </div>  
+        </section>  
+      </div>  
+     </section>
+
+
+            <!-- ========================= Shopping starts ==================== -->
+
+            <div class="shopping-container" id="foodSection">
+                <header>
+                    <h1>Food Menu Card:</h1>
+                    <div class="shopping">
+                        <img th:src="@{/Images/shopping-images/shopping.svg}">
+                        <span class="quantity">0</span>
+                    </div>
+                </header>
+        
+                <div class="list">
+                  
+                </div>
+            </div>
+            <div class="card" id="priceSummary">
+        
+                <div style="height:70px;background: #2196f3;">
+                <h1 style="margin-top:-17px;color:#fff;font-size: 20px !important;">Price Summary</h1>
+                </div>
+
+    <br>
+    
+    <span style="margin-left: 30px; color:black" >Base Fare</span>
+    <span style="margin-left: 50px;color:black" th:text="'$' + ${capturedPrice}"> </span>
+    
+    <hr class="rule" style="margin-top: 25px;">
+    
+    <br>
+    
+    <span style="margin-left: 30px; color:black" >Seat Fare</span>
+    <span style="margin-left: 50px;color:black" th:text="'$' + ${seatPrice}"> </span>
+    
+    <hr class="rule" style="margin-top: 25px;">
+    
+    
+    
+    
+    
+                <ul class="listCard"> 
+                </ul>
+        
+                <div class="checkOut" style="position: sticky;margin-top: 265px;">
+                    <div class="total" style="width:100%;background: #2196f3;"> <span th:text="'$' + ${totalPrice}"></span></div>
+                    
+                    
+                    
+                    <div class="closeShopping" style="width:100%;cursor: pointer;">
+                    
+  
+        
+        <button type="button" onclick="openPopUp()" id="redirectButton"> 
+         
+            Checkout
+           
+          </button> 
+    
+  
+                     
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+        
+            <script th:src="@{/js/app.js}" defer> </script>
+                
+                
+                
+                
+                
+                 <!-- ========================= Payment ==================== -->
+
+
+
+
+<div class="app-container popup" id="popup">
+  
+    <div class="top-box">
+        <p><span class="left-icon" onclick="closePopUp()" style="cursor: pointer;">&#x2190;</span>
+            Payment
+        <span class="right-icon">&#xb7;&#xb7;&#xb7;</span></p>
+    </div>
+
+    
+    <div class="middle-box">
+        <h1 id="paymentUpdated" th:text="'$' + ${totalPrice}"></h1>
+        <p> Paying To FlyHighHub.com</p>
+    </div>
+
+    <div clas="bottom-box">
+        <button type="button" class="payment-option-btn">Pay With PayPal</button>
+        <button type="button" class="payment-option-btn">Pay With NetBanking</button>
+        
+            
+ <form id="hidden-form" th:action="@{/boarding}" method="POST">
+  
+    <input type="hidden" name="capturedFlightName" th:value="${capturedFlightName}">
+    <input type="hidden" name="capturedFlightId" th:value="${capturedFlightId}">
+    <input type="hidden" name="capturedPrice" id="initial"  th:value="${capturedPrice}">
+    <input type="hidden" name="from" th:value="${from}">
+    <input type="hidden" name="to" th:value="${to}">
+    <input type="hidden" name="arrivalTime" th:value="${arrivalTime}">
+    <input type="hidden" name="departTime" th:value="${departTime}">
+    
+    <input type="hidden" name="firstName_1" th:value="${firstName_1}">
+    <input type="hidden" name="lastName_1" th:value="${lastName_1}">
+    <input type="hidden" name="age_1" th:value="${age_1}">
+    <input type="hidden" name="nation_1" th:value="${nation_1}">
+    
+    <input type="hidden" name="firstName_2" th:value="${firstName_2}">
+    <input type="hidden" name="lastName_2" th:value="${lastName_2}">
+    <input type="hidden" name="age_2" th:value="${age_2}">
+    <input type="hidden" name="nation_2" th:value="${nation_2}">
+    
+    <input type="hidden" name="firstName_3" th:value="${firstName_3}">
+    <input type="hidden" name="lastName_3" th:value="${lastName_3}">
+    <input type="hidden" name="age_3" th:value="${age_3}">
+    <input type="hidden" name="nation_3" th:value="${nation_3}">
+    
+    <input type="hidden" name="firstName_4" th:value="${firstName_4}">
+    <input type="hidden" name="lastName_4" th:value="${lastName_4}">
+    <input type="hidden" name="age_4" th:value="${age_4}">
+    <input type="hidden" name="nation_4" th:value="${nation_4}">
+    
+    <input type="hidden" name="travelHours" th:value="${travelHours}">
+    <input type="hidden" name="travelDays" th:value="${travelDays}">
+    <input type="hidden" name="passengerForms" th:value="${passengerForms}">
+    <input type="hidden" name="boardingTime" th:value="${boardingTime}">
+    <input type="hidden" name="parsedArrivalDate" th:value="${parsedArrivalDate}">
+    <input type="hidden" name="parsedDepartDate" th:value="${parsedDepartDate}">
+    
+    <input type="hidden" name="seat1" id="seatId1" th:value="${seatIdName1}">
+    <input type="hidden" name="seat2" id="seatId2" th:value="${seatIdName2}">
+    <input type="hidden" name="seat3" id="seatId3" th:value="${seatIdName3}">
+    <input type="hidden" name="seat4" id="seatId4" th:value="${seatIdName4}">
+    
+    
+    <input type="hidden" name="seatPrice" id="priceSeatId" th:value="${seatPrice}">
+    <input type="hidden" name="totalPrice" id="totalss" th:value="${totalPrice}">
+    
+    <input type="hidden" name="foodCost" id="foodPrice">
+        
+        <div class="card-details">
+            <p>Pay using credit or debit card</p>
+            <div class="card-num-field-group">
+                <label>Card Number</label><br>
+                <input type="text"  class="card-num-field" placeholder="xxxx-xxxx-xxxx-xxxx" name="cardDetails" required>
+            </div>
+
+            <div class="date-field-group">
+                <label>Expiry Date</label><br>
+                <input type="text" class="date-field" placeholder="mm" name="monthDetails" required>
+                <input type="text"  class="date-field" placeholder="yyyy" name="yearDetails" required>
+                
+            </div>
+
+            <div class="cvc-field-group">
+                <label>CVC</label><br>
+                <input type="password"  class="cvc-field" placeholder="xxx" name="cvcDetails" required>
+                
+            </div>
+
+            <div class="name-field-group">
+                <label>Card Holder Name</label><br>
+                <input type="text" class="name-field" placeholder="Full Name" name="holderDetails" required>
+                
+            </div>
+            
+ 
+    
+            <button type="submit" class="pay-btn" id="payNowBtn">Pay Now</button>
+            
+ </form>
+
+
+
+
+
+
+        </div>
+
+    </div>
+    
+</div>
+
+
+
+
+           <!-- ========================= ends payment page here ==================== -->   
+           
+           
+           <div id="modalbox">
+            <img  th:src="@{/Images/pop.png}" alt="cokies" class="cookies">
+            <p style="color:black;font-size: 25px;margin-left:40px;"> Book Your Meal</p>
+            <hr class="rule" style="margin-top: 15px;width:100%">
+            
+            
+            <div style="display:flex;">
+            <div>
+            <button type="button" onclick="closeModal()" id="continueButton">Continue</button>
+            </div>
+            
+            <div>
+            
+  
+  
+           
+            <button type="submit" onclick="openPopUpAndCloseMessageBox()" id="skipButton">Skip</button>
+            
+            
+   
+            
+            
+            </div>
+            
+            </div>
+            <img  th:src="@{/Images/close.png}" alt="close" class="close-pop" onclick="closeModal();">
+            
+        </div>
+
+
+
+        <script>
+
+            let modelbox = document.getElementById("modalbox");
+
+            function showModal(){
+              var here1=document.getElementById("foodSection");
+    var here2=document.getElementById("priceSummary");
+
+      here1.classList.add("active");
+
+      here2.classList.add("active");
+                
+     modelbox.style.display="block";
+                
+            }
+
+
+            function closeModal(){
+            here1.classList.remove("active");
+
+      here2.classList.remove("active");
+                modelbox.style.display="none";
+            }
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- ========================= loader starts here ==================== --> 
+
+<section class="loader-section" id="loader" style="margin-left:50%;margin-top:25%;">
+            <div class="dots">
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+                <span style="--i:4"></span>
+                <span style="--i:5"></span>
+                <span style="--i:6"></span>
+                <span style="--i:7"></span>
+                <span style="--i:8"></span>
+                <span style="--i:9"></span>
+                <span style="--i:10"></span>
+                <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                <span style="--i:13"></span>
+                <span style="--i:14"></span>
+                <span style="--i:15"></span>
+                
+                
+                
+            </div>
+        </section>
+        
+
+        
+  
+  <!-- ========================= reciept ==================== -->
+  <!-- start: Payment -->
+    <section style="align-items: center;justify-content: center;">
+        
+        <div class="payment-container popup2" id="popup2">
+            <div class="payment-wrapper">
+
+                <div class="payment-left">
+
+                    <div class="payment-header">
+                        <div class="payment-header-icon"><i class="ri-flashlight-fill"></i></div>
+                        <div class="payment-header-title">Payment Summary</div>
+                        <p class="payment-header-description">Thankyou <span th:text="${userName}"> </span> Your Payment Reciept Is Ready.</p>
+                    </div>
+                    <div class="payment-content">
+                        <div class="payment-body">
+
+                            <div class="payment-plan">
+                                <div class="payment-plan-type">Pro</div>
+                                <div class="payment-plan-info">
+                                    <div class="payment-plan-info-name">Professional Plan</div>
+                                    <div class="payment-plan-info-price">$49 per month</div>
+                                </div>
+                                <a href="#" class="payment-plan-change">Change</a>
+                            </div>
+
+                            <div class="payment-summary">
+                                <div class="payment-summary-item">
+                                    <div class="payment-summary-name">Base Fair</div>
+                                    <div class="payment-summary-price"> <span id="base" th:text="'$' + (${capturedPrice} != null ? ${capturedPrice} : 0)">0</span>
+                                       </div>
+                                </div>
+                                <div class="payment-summary-item">
+                                    <div class="payment-summary-name">Seat Fair</div>
+                                    <div class="payment-summary-price"><span th:text="'$' + (${seatPrice} != null ? ${seatPrice} : 0)">0</span>
+</div>
+                                </div>
+                                
+                                <div class="payment-summary-item">
+                                    <div class="payment-summary-name">Food Charges</div>
+                                    <div class="payment-summary-price">$<span id="fch"> 0 </span></div>
+                                </div>
+                                
+                                <div class="payment-summary-divider"></div>
+                                <div class="payment-summary-item payment-summary-total">
+                                    <div class="payment-summary-name">Total</div>
+                                    <div class="payment-summary-price"> $ <span id="nt" th:text="${capturedPrice}"></span> </div>
+                                </div>
+
+                                <div class="payment-summary-divider"></div>
+
+                               
+                                <div class="payment-summary-item" style="align-items: center;justify-content: center;background:  var(--indigo-500);color:#fff;
+                                margin-top:-10px;height:30px;">
+                                    
+                                    <button type="submit" onclick="pay_success();"
+                                    style="width: 140%;height:40px;outline: none;background:  var(--indigo-500);color:#fff;border:none;cursor: pointer;"> Proceed To Boarding Pass </button>
+                                </div>
+
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- end: Payment -->
+    
+    
+ <script>
+    document.getElementById('payNowBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        var sk1=document.getElementById("foodSection");
+        var sk2=document.getElementById("priceSummary");
+         var sk3=document.getElementById("popup");
+        const formHere = document.getElementById('hidden-form');
+        
+        sk1.style.display="none";
+        sk2.style.display="none";
+        sk3.style.display="none";
+        
+        
+        // Show loader section
+        document.querySelector('.loader-section').style.display = 'block';
+        
+        // Submit form after 5 seconds
+        setTimeout(function() {
+        
+            //document.querySelector('form').submit();
+            document.querySelector('.loader-section').style.display = 'none';
+            var su=document.getElementById("popup2");
+            su.classList.add("open-popup-2");
+            
+        }, 5000);
+        
+    });
+    
+    function pay_success(){
+      var form_to_submit = document.getElementById("hidden-form");
+      form_to_submit.submit();
+    }
+</script>
+  
+  
+  <!-- ========================= For signout ==================== -->
+    <!-- Include your scripts here -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        // Check if there's a message in the flash attributes
+        var messagespx = /*[[${messageLogOut}]]*/ null;
+        
+        console.log(messagespx);
+        
+        console.log(messagespx);
+        if (messagespx && messagespx.trim().length > 0) {
+        
+                    // Display the message using SweetAlert
+            if (messagespx === "Please Log In First!") {
+                swal({
+                    title: "Failure!",
+                    text: messagespx,
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                  });
+            } else {
+                swal({
+                    title: "Success!",
+                    text: messagespx,
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                });
+            }
+            
+         }
+        
+        /*]]>*/
+    </script>
+  
+                
+
+<!-- ========================= Footer ==================== -->
+
+<div class="footer" id="footer" style="display: flex;">
+    <span style="margin-right: auto;">
+        Flight Reservation System 2024
+    </span>
+    
+</div>
+
+
+    
+   <!-- =========== Scripts =========  -->
+   <script>
+
+    // add hovered class to selected list item
+   let list = document.querySelectorAll(".navigation li");
+
+   function activeLink() {
+        list.forEach((item) => {
+            item.classList.remove("hovered");
+        });
+        this.classList.add("hovered");
+    }
+
+     list.forEach((item) => item.addEventListener("mouseover", activeLink));
+    
+    //selecting dashboard as default
+    let sel = document.getElementById("default");
+    sel.classList.add("hovered");
+    // Menu Toggle
+   let toggle = document.querySelector(".toggle");
+   let navigation = document.querySelector(".navigation");
+   let main = document.querySelector(".main");
+   
+   
+
+    toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+        
+        
+    };
+
+
+   
+
+
+   
+
+</script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+
+
+<script>
+    var x=document.getElementById("popup");
+    var here1=document.getElementById("foodSection");
+    var here2=document.getElementById("priceSummary");
+    
+    
+
+    function openPopUp(){
+      //to display the popup
+      x.classList.add("open-popup");
+
+      
+
+      here1.classList.add("active");
+
+      here2.classList.add("active");
+      
+      
+      
+    }
+    
+    function openPopUpAndCloseMessageBox(){
+            x.classList.add("open-popup");
+            let modelboxx = document.getElementById("modalbox");
+            modelboxx.style.display="none";
+    }
+
+    function closePopUp(){
+      here1.classList.remove("active");
+      here2.classList.remove("active");
+      //to display the popup
+      setTimeout(function(){
+          x.classList.remove("open-popup");
+      },88);
+      
+    }
+  </script>
+  
+  
+  <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const listItems = document.querySelectorAll('.navigation ul li');
+            
+            // Function to handle the click event
+            const handleClick = (item) => {
+                listItems.forEach(li => {
+                    li.classList.remove('hovered');
+                    li.style.backgroundColor = '';
+                    const link = li.querySelector('a');
+                    if (link) link.style.color = '';
+                });
+
+                item.classList.add('hovered');
+                item.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--white');
+                const link = item.querySelector('a');
+                if (link) link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--blue');
+            };
+
+            // Add click event listener to each list item
+            listItems.forEach(item => {
+                item.addEventListener('click', () => handleClick(item));
+            });
+
+            // Make the first list item selected by default
+            if (listItems.length > 0) {
+                handleClick(listItems[1]);
+            }
+        });
+    </script>
+    
+    
+    
+    <script>
+       var pro = document.getElementById("profile");
+       function dashboard(){
+           pro.style.display="none";
+           var g = document.getElementById("aboutUs");
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           var s = document.getElementById("foodSection");
+           var t = document.getElementById("priceSummary");
+           var u = document.getElementById("popup");
+           var v = document.getElementById("popup2");
+           var w = document.getElementById("loader");
+           
+           
+           
+           
+           g.style.display="none";
+           
+           i.style.display="none";
+           j.style.display="none";
+           
+           s.style.display="block";
+           t.style.display="block";
+           u.style.display="none";
+           v.style.display="none";
+           w.style.display="none";
+           
+           showModal();
+           
+           
+           
+       
+       }
+       
+       function about(){
+           pro.style.display="none";
+           var g = document.getElementById("aboutUs");
+           
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           var s = document.getElementById("foodSection");
+           var t = document.getElementById("priceSummary");
+           var u = document.getElementById("popup");
+           var v = document.getElementById("popup2");
+           var w = document.getElementById("loader");
+           var xy = document.getElementById("modalbox");
+   
+           
+           g.style.display="block";
+           
+           i.style.display="none";
+           j.style.display="none";
+           
+           s.style.display="none";
+           t.style.display="none";
+           u.style.display="none";
+           v.style.display="none";
+           w.style.display="none";
+           xy.style.display="none";
+           
+           
+       
+       }
+       function service(){
+           pro.style.display="none";
+           var g = document.getElementById("aboutUs");
+           
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           var s = document.getElementById("foodSection");
+           var t = document.getElementById("priceSummary");
+           var u = document.getElementById("popup");
+           var v = document.getElementById("popup2");
+           var w = document.getElementById("loader");
+           var xy = document.getElementById("modalbox");
+   
+           
+           g.style.display="none";
+           
+           i.style.display="block";
+           j.style.display="none";
+           
+           s.style.display="none";
+           t.style.display="none";
+           u.style.display="none";
+           v.style.display="none";
+           w.style.display="none";
+           xy.style.display="none";
+       
+       }
+       function contact(){
+           pro.style.display="none";
+           var g = document.getElementById("aboutUs");
+           
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           var s = document.getElementById("foodSection");
+           var t = document.getElementById("priceSummary");
+           var u = document.getElementById("popup");
+           var v = document.getElementById("popup2");
+           var w = document.getElementById("loader");
+           var xy = document.getElementById("modalbox");
+   
+           g.style.display="none";
+           
+           i.style.display="none";
+           j.style.display="block";
+           
+           s.style.display="none";
+           t.style.display="none";
+           u.style.display="none";
+           v.style.display="none";
+           w.style.display="none";
+           xy.style.display="none";
+       
+       }
+       function signout(){
+       
+           window.location.href="/signout";
+           
+       }
+       
+       
+       function profile(){
+       
+           var gl = document.getElementById("aboutUs");
+           
+           var il = document.getElementById("service-section");
+           var jl = document.getElementById("contact-section");
+           
+           var sl = document.getElementById("foodSection");
+           var tl = document.getElementById("priceSummary");
+           var ul = document.getElementById("popup");
+           var vl = document.getElementById("popup2");
+           var wl = document.getElementById("loader");
+           var xyl = document.getElementById("modalbox");
+   
+           gl.style.display="none";
+           
+           il.style.display="none";
+           jl.style.display="none";
+           
+           sl.style.display="none";
+           tl.style.display="none";
+           ul.style.display="none";
+           vl.style.display="none";
+           wl.style.display="none";
+           xyl.style.display="none";
+         
+         pro.style.display="block";
+         
+         
+       }
+    </script>
+  
+  
+  </body>
+</html>
