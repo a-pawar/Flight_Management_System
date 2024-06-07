@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeLeaf.org">
+
+<head>
+   
+    <title>Responsive</title>
+     <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    /> 
+    
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+     <link rel="stylesheet" th:href="@{/css/services.css}">
+     <link rel="stylesheet" th:href="@{/css/contact.css}">
+     <link rel="stylesheet" th:href="@{/css/profile.css}">
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ======= Styles ====== -->
+    <style>
+        /* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.header{
+  
+  
+  height: 100%;
+  background: #fff;
+  width:100%;
+  /* border-left: 10px solid var(--blue); */
+  transition: 0.5s;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  color:black;
+  padding: 10px ;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  display: flex;
+  
+}
+
+.footer {
+    position: fixed;
+  width: 100%;
+  height: 7%;
+  bottom:0;
+  background: var(--black1);
+  border-left: 10px solid var(--black1);
+  transition: 0.5s;
+  overflow: hidden;
+ 
+  color:white;
+  padding: 10px;
+    }
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navigation ul li a img{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+  margin-top: 10px;
+}
+.icon{
+
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body{
+    background: #ebe9e9;
+    overflow: hidden; /* Disable scrolling */
+}
+
+
+
+
+.hero {
+                height: 150%;
+                width: 100%;
+                /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg'); */
+               margin-top:-30px;
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+            }
+            .form-box{
+                width:600px;
+                height:600px;
+                position: relative;
+                margin:6% auto;
+                background:#fff;
+                padding:5px;
+                
+                overflow: hidden;
+                border-radius: 50px;
+            }
+            .button-box{
+                width:504px;
+                margin:35px auto;
+                position: relative;
+                box-shadow: 0 0 20px 9px #ff61241f;
+                border-radius: 30px;
+            }
+
+            .toggle-btn{
+                cursor: pointer;
+                background: transparent;
+                outline:none;
+                border:0;
+                padding:10px 30px;
+                position: relative;
+            }
+            #btn{
+                top:0;
+                left:0;
+                position: absolute;
+                width:110px;
+                height:100%;
+                background:linear-gradient(to right,#ff105f,#ffad06);
+                border-radius: 30px;
+                transition: .5s;
+            }
+            .social-icons{
+                margin:30px auto;
+                text-align: center;
+            }
+            .social-icons img{
+                width:30px;
+                margin:0 12px;
+                box-shadow: 0 0 20px 0 #7f7f7f3d;
+                cursor: pointer;
+                border-radius: 50% ;
+            }
+
+            .input-group{
+                top:180px;
+                position: absolute;
+                width:280px;
+                transition:.5s;
+            }
+
+            .input-field{
+                width:100%;
+                padding:10px 0;
+                margin:10px 0;
+                border-left:0;
+                border-right:0;
+                border-top:0;
+                border-bottom:1px solid #999;
+                outline: none;
+                background: transparent;
+            }
+
+            .submit-btn{
+                width:85%;
+                padding:10px 30px;
+                cursor: pointer;
+                display: block;
+                margin:auto;
+                background:linear-gradient(to right,#ff105f,#ffad06);
+                border:0;
+                outline:none;
+                border-radius: 30px;
+            }
+
+            .check-box{
+                margin:30px 10px 30px 0;
+
+            }
+
+            .sp{
+                color:#777;
+                font-size: 12px;
+                bottom:94px;
+                position: absolute;
+            }
+
+            #login{
+                left:170px;
+            }
+            #register{
+                left:600px;
+            }
+            
+            #view{
+                left:600px;
+            }
+
+            #search{
+                left:600px;
+            }
+            #remove{
+               left:600px;
+            }
+
+
+            .input-wrapper {
+    position: relative;
+    
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+   
+}
+
+.input-wrapper input[type="text"]:focus,
+.input-wrapper input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+
+.input-wrapper input[type="email"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.input-wrapper input[type="email"]:focus {
+    border-color: #007bff; 
+}
+
+.input-wrapper input[type="date"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.input-wrapper input[type="date"]:focus {
+    border-color: #007bff; 
+}
+
+#message,#message2{
+    position: absolute;
+    
+    color:black;
+    font-size: 12px;
+    display: none;
+}
+
+.custom-alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+    }
+    
+    
+    
+    <!-- card styling starts-->
+    
+     .card-container {
+    max-width: 1090px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next row */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards with suitable gap */
+}
+
+.card-container .card {
+    width: calc(33% - 20px); /* Three columns layout */
+    background: #fff;
+    text-align: center;
+    padding: 15px 30px 30px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+
+        .card-container .card .top {
+            height: 130px;
+            background: red;
+            color: #fff;
+            padding: 12px 0 0 0;
+            clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+        }
+
+        .card-container .card .top .title {
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .card-container .card .top .price-sec {
+            margin-top: 2px;
+        }
+
+        .card-container .card .top .price-sec .price {
+            font-size: 40px;
+        }
+
+        .card-container .card .info {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .card-container .card .details .plan {
+            margin-top: 25px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .card-container .card .details .plan::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            left: 0;
+            top: -12px;
+        }
+
+        .card-container .card .plan i {
+            color: #2db94d;
+        }
+
+        .card-container .card .plan i.fa-times {
+            color: #cd3241;
+        }
+
+        .card-container .card button {
+            outline: none;
+            border: none;
+            height: 42px;
+            display: block;
+            margin-top: 30px;
+            width: 100%;
+            background: red;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        /* Apply different background colors using nth-child selector */
+.card-container .card:nth-child(3n+1) .top,
+.card-container .card:nth-child(3n+1) button {
+    background: #14eb6e;
+}
+
+.card-container .card:nth-child(3n+2) .top,
+.card-container .card:nth-child(3n+2) button {
+    background: #e87130;
+}
+
+.card-container .card:nth-child(3n+3) .top,
+.card-container .card:nth-child(3n+3) button {
+    background: #11BCC3;
+}
+
+.dollar,.decimal{
+font-size:20px;
+}
+
+
+
+
+
+.inputBox{
+            margin-left: 65px;
+            position: relative;
+            width: 250px;
+
+        }
+
+        .inputBox input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: #fff;
+            outline: none;
+            
+            font-size: 13px;
+            transition: 0.5s;
+
+        }
+
+        .inputBox span{
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            padding-left: 30px;
+            padding-top:   13px;
+            
+            pointer-events: none;
+            font-size: 13px;
+            color: #777777;
+            
+            transition: 0.5s;
+        }
+
+        .inputBox input:valid ~ span,
+        .inputBox input:focus ~ span
+        {
+            color: #1d2b3a;
+            transform: translateX(10px) translateY(-7px);
+
+            font-size: 0.65em;
+            padding: 0 10px;
+
+            background: #00dfc4;
+            border-left: 1px solid #00dfc4;
+            border-right: 1px solid #00dfc4;
+            letter-spacing: 0.2em;
+            
+
+
+        }
+
+        
+
+        .inputBox input:valid,
+        .inputBox input:focus{
+            border: 1px solid #00dfc4;
+        }
+        
+
+    
+     #aboutUs,#service-section,#contact-section{
+        display:none;
+      }
+    
+.profile-dropdown {
+  position: relative;
+  width: fit-content;
+  position: relative;
+  overflow:hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black);
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: var(--secondary-light-2);
+  box-shadow: var(--shadow);
+}
+
+
+.profile-dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+.profile-dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: max-height 0.5s;
+  z-index: 9999; /* Ensure this is higher than other elements */
+}
+
+.profile-dropdown-list hr {
+  border: 0.5px solid var(--green);
+}
+
+.profile-dropdown-list.active {
+  max-height: 500px;
+  
+}
+
+
+.profile-dropdown-list-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+.profile-dropdown-list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.profile-dropdown-list-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+  background:linear-gradient(-45deg,#4481eb,#04befe);
+}
+
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+:root {
+  --primary: #eeeeee;
+  --secondary: #227c70;
+  --green: #82cd47;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --secondary-light-2: rgb(127, 183, 126, 0.1);
+  --white: #fff;
+  --black: #393e46;
+
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
+}
+
+.profile-dropdown-list-item:hover {
+  padding-left: 1.5rem;
+  background: linear-gradient(-45deg, #7aaeff, #5ad4ff);
+  
+}
+ 
+#profile{
+   margin-left:35%;
+   margin-top:20px;
+   display:none;
+}
+
+
+.hidden {
+            display: none;
+        }
+
+
+body.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Cancel the custom styles applied to input[type=date] */
+#c:required:invalid::-webkit-datetime-edit {
+    color: initial;
+}
+
+#c:focus::-webkit-datetime-edit {
+    color: initial !important;
+}
+
+    </style>
+    
+    
+    
+     <script th:inline="javascript">
+        function redirectToProfileValidation() {
+        
+            // Check if the redirection has already occurred
+            
+            if (!sessionStorage.getItem('suyashKhare')) {
+            
+                sessionStorage.setItem('suyashKhare', 'true');
+                
+                
+                
+                
+                window.location.href = '/profile_validation';
+            }
+            
+            else{
+                /*<![CDATA[*/
+        var storedEmail = /*[[${stored_email}]]*/ '';
+        var storedDob = /*[[${stored_dob}]]*/ '';
+        var userNames = /*[[${userName}]]*/ '';
+        /*]]>*/
+        console.log(storedEmail);   
+        // Check if all values are not null, not empty, and exist
+        if (storedEmail && storedDob && userNames) {
+            console.log("chala");   
+            sessionStorage.setItem('stored_email', storedEmail);
+            sessionStorage.setItem('stored_dob', storedDob);
+            sessionStorage.setItem('userName', userNames);
+        }
+        
+       
+            
+            }
+            
+            
+        }
+        
+        window.onload = redirectToProfileValidation();
+    </script>
+    
+    
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                           <img src="" th:src="@{/Images/departures.png}" alt="Facebook"/>
+
+                        </span>
+                        <span class="title">FlyHighHub.com</span>
+                    </a>
+                </li>
+
+                <li  id="default"  onclick="dashboard();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li  onclick="about();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">About Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="service();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="construct-outline"></ion-icon>
+                        </span>
+                        <span class="title">Our Service</span>
+                    </a>
+                </li>
+
+                <li onclick="contact();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Contact Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="signout();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline" ></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar" >
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="header">
+                    <span >
+                        <i class="fa fa-plane" style="font-size:30px;"><strong>Admin Dashboard</strong></i> 
+                    </span>
+                    <div onclick="toggle_function()" class="user profile-dropdown" style="width:50px;height:50px;z-index:2222;">
+                       <div  class="profile-dropdown-btn">
+                        <img th:src="@{/Images/e.png}" alt="Facebook"/>
+                       </div>
+                    </div>
+                </div>
+
+                
+        </div>
+        
+        
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item" onclick="profile();">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-envelope"></i>
+              Inbox
+            </a>
+          </li>
+
+          
+
+          <li class="profile-dropdown-list-item" onclick="toggleMode();">
+            <a href="#">
+            
+             <span id="dark-mode" style="display: block;">
+               <i class="fa-solid fa-moon"></i>
+                 Dark Mode
+             </span>
+             
+             <span id="light-mode" style="display: none;">
+                   <i class="fa-solid fa-sun"></i>
+                   Light Mode
+             </span>
+
+             
+            </a>
+          </li>
+          
+ <script>
+ 
+    const darkModeText = document.getElementById('dark-mode');
+    const lightModeText = document.getElementById('light-mode');
+    
+    function toggleMode() {
+        // Toggle dark mode class on the body
+        document.body.classList.toggle('dark-mode');
+        
+        if (darkModeText.style.display === "none") {
+           darkModeText.style.display = "block";
+           lightModeText.style.display = "none";
+        } else {
+           darkModeText.style.display = "none";
+           lightModeText.style.display = "block";
+        }
+     }
+    
+ </script> 
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+</ul>
+      
+      
+      <script>
+        let profileDropdownList = document.querySelector(".profile-dropdown-list");
+let btn = document.querySelector(".profile-dropdown-btn");
+
+let classList = profileDropdownList.classList;
+
+console.log(classList);
+
+const toggle_function = () => classList.toggle("active");
+
+window.addEventListener("click", function (e) {
+
+  
+
+  if (!btn.contains(e.target)) classList.remove("active");
+  
+});
+
+    </script>
+    
+    
+     
+
+          <!-- ========================= Profile Section ==================== -->
+    
+    
+    <div id="profile">
+    <div class="profile-card"  style="align-items:center; justify-content:center;">
+      <div class="image" style="margin-top: 70px;">
+        <img th:src="@{/Images/e.png}" alt="" class="profile-img" />
+        
+      </div>
+
+      <br>
+
+      <div class="text-data">
+      
+        <span class="name"></span>
+        
+        <script th:inline="javascript">
+           /*<![CDATA[*/
+           var userNamep = sessionStorage.getItem('userName');
+           var capitalizedUserName = userNamep.charAt(0).toUpperCase() + userNamep.slice(1);
+    
+           document.querySelector('.name').textContent = 'Hello ' + capitalizedUserName;
+           
+           /*]]>*/
+        </script>
+        
+      </div>
+
+      <div class="text-data " style="margin-top: 30px;">
+
+
+<form id="to_submit" th:action="@{update_details_of_profile}" method="POST">
+        <div class="beautiful-div">
+    <div class="entryarea">
+        <input type="text" name="updated_name" class="lele-input">
+        <div class="labelline" style="margin-left: 8px;">Username</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" type="email" style="pointer-events: none;cursor: not-allowed;">
+        <div class="labelline" style="margin-left: 8px;">Email</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" name="updated_dob" type="date" style="display:block">
+        <div class="labelline" style="margin-left: 8px;">Date of birth</div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    // Retrieve values from sessionStorage
+    var userName = sessionStorage.getItem('userName');
+    var storedEmail = sessionStorage.getItem('stored_email');
+    var storedDob = sessionStorage.getItem('stored_dob');
+
+    // Set values in the corresponding input fields
+    document.querySelector('.lele-input[type="text"]').value = userName;
+    document.querySelector('.lele-input[type="email"]').value = storedEmail;
+    document.querySelector('.lele-input[type="date"]').value = storedDob;
+    /*]]>*/
+</script>
+
+        
+      </div>
+
+
+
+
+      <div class="buttonsp">
+        <button type="submit" id="updateDetails-btn" class="buttonp">Update</button>
+      </div>
+
+</form>
+
+<script>
+    var tu = document.getElementById("updateDetails-btn");
+    var fg = document.getElementById("to_submit");
+    tu.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        swal({
+	  title: "Are you sure?",
+	  text: "You want to update your details?",
+	  icon: "warning",
+	  buttons: true,
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	
+	  if (willDelete) {
+	     sessionStorage.removeItem("suyashKhare");
+         fg.submit();
+	  } 
+	  
+	  else {
+		swal("Your details are safe!");
+	  }
+	});
+	
+        
+    });
+</script>
+
+
+      <div class="media-buttons">
+        <a href="#" style="background: #4267b2" class="link">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="#" style="background: #1da1f2" class="link">
+          <i class="bx bxl-twitter"></i>
+        </a>
+        <a href="#" style="background: #e1306c" class="link">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="#" style="background: #ff0000" class="link">
+          <i class="bx bxl-youtube"></i>
+        </a>
+      </div>
+
+      
+
+      
+    </div>
+    
+    </div>        
+        <!-- ========================= Contact Us ==================== -->
+        
+<section class="contact-section" id="contact-section" style="margin:20px;">       
+        <div class="contact-container">
+      <span class="big-circle"></span>
+      <img th:src="@{/Images/contact-images/shape.png}" class="square" alt="" />
+      <div class="form-for-contact" style="margin-top:-80px;">
+        <div class="contact-info">
+          <h3 class="contact-title">Let's get in touch</h3>
+          <p class="text">
+            
+To share your feedback/complaints/suggestions or to reach out to our Customer Experience Team.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img th:src="@{/Images/contact-images/location.png}" class="icon" alt="" />
+              <p>92 Cherry Drive Uniondale, NY 11553</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/email.png}" class="icon" alt="" />
+              <p>lorem@ipsum.com</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/phone.png}"  class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="contact-social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id="contact-form-hun" th:action="@{/contact_support}" method="POST" autocomplete="off">
+            <h3 class="contact-title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="contact_name" class="input" />
+              <label for="">Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="contact_email" class="input" />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="contact_phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="contact_message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <script>
+
+
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+    </script>
+         <!-- ========================= Our Services ==================== -->
+         
+         <section class="service-section" id="service-section" style="margin:20px;max-height:700px;overflow-y:auto;">
+      <div class="services-row">
+        <center><h1 class="section-heading" style="font-size:30px;margin-left:20px;color: #2c7bfe;text-decoration:underline;">Our Services:</h1></center>
+      </div>
+      <br>
+      <div class="services-row">
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-plane"></i>
+            </div>
+            <h3 class="heading-3">Flight Booking</h3>
+            <p class="para">
+                Book flights to numerous domestic and international destinations with ease.
+                Access to a wide range of dates to fit your schedule and budget.
+
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="heading-3">Group Bookings</h3>
+            <p class="para">
+                Specialized services for corporate clients, including bulk bookings and corporate discounts.
+                Avail of special discounts and services for group travel.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3 class="heading-3">Secure Payment Options</h3>
+            <p class="para">
+                Pay securely using credit cards, debit cards, and other payment methods.
+                Your payment information is protected with advanced security measures.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3 class="heading-3">Booking Management</h3>
+            <p class="para">
+                Modify or cancel your bookings effortlessly through our user-friendly platform.
+                Receive your e-tickets via email and access them anytime, anywhere.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="heading-3">Travel Insurance</h3>
+            <p class="para">
+                Protect your trip with travel insurance covering cancellations, medical emergencies, and more.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="heading-3">Customer Support</h3>
+            <p class="para">
+                Our dedicated support team is available around the clock to assist you with any queries or issues.
+                Get instant help through our live chat feature for quick resolutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+         <!-- ========================= About Us ==================== -->
+         
+      <section id="aboutUs" style="background:#fff;margin:20px;">
+        <div class="heading">  
+            <h1>About Us</h1>  
+            <p>  
+              FlyHighHub.com is one of the leading travel organisations in India, aiming to offer exclusive travel services to diverse explorers.  
+            </p>  
+        </div>  
+        
+       <div class="about-container">  
+           <section class="about">  
+             <div class="about-image">  
+               <img th:src="@{Images/suyash.jpg}">  
+             </div>  
+       <div class="abou-content">  
+         <h2>Established in 2008: Pioneering India's Online Travel Landscape</h2>  
+         <p> Established in 2008,  FlyHighHub.com is India’s second-largest* online travel platform.  
+            Operating initially from a small space, we overcame challenges through determination and familial support, evolving into a resilient entity ensuring financial stability. Transitioning to a customer-facing model in 2011, we adopted a 'no convenience fee' policy, attracting a loyal customer base with transparent pricing and exceptional service.
+         </p>  
+         <a href="" class="read-more" >Read More</a>  
+       </div>  
+        </section>  
+      </div>  
+     </section>
+
+
+        <!-- ========================= Login/Register ==================== -->
+
+        <div class="hero">
+            <div class="form-box" id="registerSection">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    
+                    <button type="button" class="toggle-btn" onclick="login()">Add</button> 
+                    <button type="button" class="toggle-btn" onclick="register()">Update</button> 
+                    <button type="button" class="toggle-btn" onclick="remove()">Remove</button> 
+                    
+                    <button type="button" class="toggle-btn" onclick="view()">View</button> 
+                    <button type="button" class="toggle-btn" onclick="search()">Search</button> 
+                
+                </div>
+
+                <div class="social-icons">
+                    <img src="" th:src="@{/Images/fb.png}" alt="Facebook"/>
+                    <img src="" th:src="@{/Images/tw.png}" alt="Twitter"/>
+                    <img src="" th:src="@{/Images/gp.png}" alt="Google+"/>
+                </div>
+
+                <form id="login" th:action="@{/admin_add}" method="post" class="input-group">
+                    
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane"></i>
+                        <input type="text" class="input-field" placeholder="Flight Name" name="flightName" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-arrival"></i>
+                        <input type="text" class="input-field" placeholder="Arrival Details" name="arrival" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-departure"></i>
+                        <input type="text" class="input-field" placeholder="Departure Details" name="departure" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-chair"></i>
+                        <input type="text" class="input-field" placeholder="Seats Available" name="seatsAvailable" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-dollar-sign"></i>
+                        <input type="text" class="input-field" placeholder="Cost Price" name="costPrice" required>
+                    </div>
+                    
+                    
+                    
+                    <br>
+                    
+                    
+                    <button type="submit" class="submit-btn" style="margin-bottom: 10px;">Add</button>
+                    
+                </form>
+
+                <!-- for updation !-->
+                
+                
+                <form  th:action="@{/admin_update}" th:objects="${user}" method="post" id="register" class="input-group">
+                
+              
+    
+    
+    
+               
+                 
+                 
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane"></i>
+                        <input type="text" class="input-field" placeholder="Flight Name" name="flightName" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-arrival"></i>
+                        <input type="text" class="input-field" placeholder="Arrival Details" name="arrival" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-departure"></i>
+                        <input type="text" class="input-field" placeholder="Departure Details" name="departure" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-chair"></i>
+                        <input type="text" class="input-field" placeholder="Seats Available" name="seatsAvailable" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-dollar-sign"></i>
+                        <input type="text" class="input-field" placeholder="Cost Price" name="costPrice" required>
+                    </div>
+                    
+                    
+                    
+                    <br>
+                    
+                    
+                    <button type="submit" class="submit-btn" style="margin-bottom: 10px;">Update</button>
+
+                    
+                </form>
+                
+                
+                <!-- for deletion !-->
+                
+                
+                <form  th:action="@{/admin_delete}" th:objects="${user}" method="post" id="remove" class="input-group">
+                
+                
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane"></i>
+                        <input type="text" class="input-field" placeholder="Flight Name" name="flightName" required>
+                    </div>
+                    
+                    
+                    
+                    
+                    <br>
+                    
+                    
+                    <button type="submit" class="submit-btn" style="margin-bottom: 10px;">Delete</button>
+
+                    
+                </form>
+                
+                
+                <form  th:action="@{/admin_view}" method="post" id="view" class="input-group">
+            
+                    
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-arrival"></i>
+                        <input type="text" class="input-field" placeholder="Arrival Details" name="arrival" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-departure"></i>
+                        <input type="text" class="input-field" placeholder="Departure Details" name="departure" required>
+                    </div>
+                    
+                    
+                    
+                    <br>
+                    
+                    
+                    <button type="submit" class="submit-btn" style="margin-bottom: 10px;">View</button>
+
+                    
+                </form>
+
+                <form  th:action="@{/admin_search}" method="post" id="search" class="input-group">
+            
+                    
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-arrival"></i>
+                        <input type="text" class="input-field" placeholder="Current Location" name="arrival" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-plane-departure"></i>
+                        <input type="text" class="input-field" placeholder="Destination" name="departure" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" class="input-field" placeholder="Date of Journey" id="c" name="departure_date" required>
+                    </div>
+                    
+                    
+                    
+                    <br>
+                    
+                    
+                    <button type="submit" class="submit-btn" style="margin-bottom: 10px;">Search</button>
+
+                    
+                </form>
+                
+                
+                
+                                
+
+
+            </div>
+            
+            
+       <!-- Section to be scrolled to -->
+                  <section id="flightsSection" class="section__container booking__container" th:if="${flights != null && flights.size() > 0}">
+                  
+           
+   <h1 style="margin-top:-50px;color:#4070F4;">List of Available Flights:</h1>
+   <hr style="margin-top:5px">
+   <br>
+    <div class="card-container">
+        <div class="card one" th:each="flight : ${flights}">
+            <div class="top">
+                <div class="title" th:text="${flight.flightName}"></div>
+                <div class="price-sec">
+                    <!-- If needed, you can add price information here -->
+                   <span class="dollar">&#8377;</span>
+                   
+                   <span class="price" th:text="${flight.costPrice}"></span>
+                   <span class="decimal">.99</span>
+                </div>
+            </div>
+            <div class="info">More Information:</div>
+            <div class="details">
+            
+            <div class="plan">
+                Arrival: <span th:text="${flight.arrival}"></span>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="plan">
+                Departure: <span th:text="${flight.departure}"></span>
+                <i class="fas fa-check"></i>
+            </div>
+            <div class="plan">
+                Seats Left: <span th:text="${flight.seatsAvailable}"></span>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="plan">
+                <span>Discount Apply</span>
+                <i class="fas fa-times"></i>
+            </div>
+            
+                
+            </div>
+            <button>Book Now</button>
+        </div>
+    </div> 
+    <hr style="margin-top:20px;">   
+    </section>
+
+            
+
+            
+            
+        </div>
+
+        <script>
+        
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var z = document.getElementById("btn");
+
+            var a=document.getElementById("view");
+            var b=document.getElementById("search");
+            var extra=document.getElementById("remove");
+            
+            
+            function register(){
+                x.style.left="-300px";
+                y.style.left="170px";
+                z.style.left="90px";
+                b.style.left="600px";
+                a.style.left="600px";
+                extra.style.left="600px";
+                
+                
+            }
+            
+            
+
+            function login(){
+                x.style.left="170px";
+                y.style.left="-300px";
+                z.style.left="0px";
+                b.style.left="600px";
+                a.style.left="600px";
+                extra.style.left="600px";
+                
+            }
+            
+            
+            function remove(){
+                x.style.left="-300px";
+                y.style.left="-300px";
+                z.style.left="190px";
+                b.style.left="600px";
+                a.style.left="600px";
+                extra.style.left="170px";
+            }
+
+            function view(){
+                x.style.left="-300px";
+                y.style.left="-300px";
+                extra.style.left="-300px";
+                a.style.left="170px";
+                z.style.left="300px";
+                b.style.left="600px";
+            }
+
+            function search(){
+                x.style.left="-300px";
+                y.style.left="-300px";
+                a.style.left="-300px";
+                extra.style.left="-300px";
+                z.style.left="405px";
+                b.style.left="170px";
+            }
+           
+
+        </script>
+        
+        
+        
+        
+        
+        
+         <!-- Include your scripts here -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        // Check if there's a message in the flash attributes
+        var message = /*[[${message}]]*/ null;
+        
+        console.log(message);
+        if (message && message.trim().length > 0) {
+        
+            // Display the message using SweetAlert
+            if (message === "No Flight Found With Given Flight Name" || message === "Error in updating the flight details"
+            || message === "Flight Already Exist!") {
+                swal({
+                    title: "Failure!",
+                    text: message,
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                  });
+            } else {
+                swal({
+                    title: "Success!",
+                    text: message,
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                });
+            }
+        }
+        /*]]>*/
+    </script>
+    
+    
+    
+    
+    <!-- ========================= For signout ==================== -->
+    <!-- Include your scripts here -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        // Check if there's a message in the flash attributes
+        var messagespx = /*[[${messageLogOut}]]*/ null;
+        
+        console.log(messagespx);
+        
+        console.log(messagespx);
+        if (messagespx && messagespx.trim().length > 0) {
+        
+                    // Display the message using SweetAlert
+            if (messagespx === "Please Log In First!") {
+                swal({
+                    title: "Failure!",
+                    text: messagespx,
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                  });
+            } else {
+                swal({
+                    title: "Success!",
+                    text: messagespx,
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                });
+            }
+            
+         }
+        
+        /*]]>*/
+    </script>
+
+
+
+        <!-- ========================= Footer ==================== -->
+
+        <div class="footer" style="display: flex;">
+            <span style="margin-right: auto;">
+                Flight Reservation System 2024
+            </span>
+            
+        </div>
+        
+        
+
+    <!-- =========== Scripts =========  -->
+    <script>
+
+        // add hovered class to selected list item
+       let list = document.querySelectorAll(".navigation li");
+
+       function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+
+         list.forEach((item) => item.addEventListener("mouseover", activeLink));
+        
+        //selecting dashboard as default
+        let sel = document.getElementById("default");
+        sel.classList.add("hovered");
+        // Menu Toggle
+       let toggle = document.querySelector(".toggle");
+       let navigation = document.querySelector(".navigation");
+       let main = document.querySelector(".main");
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        };
+
+       
+
+    </script>
+
+    <script>
+
+        var confirm = document.getElementById("confirmPassword");
+        var msg2 = document.getElementById("message2");
+        var str2 = document.getElementById("strength2");
+        var pass = document.getElementById("registerPassword");
+      
+    confirm.addEventListener("input" , () =>{    
+        if(pass.value.length > 0 && confirm.value.length>0){
+            msg2.style.display = "block"; 
+            if(pass.value === confirm.value){
+                str2.innerHTML = "match";
+                confirm.style.borderColor = "#26d730";
+                msg2.style.color = "#26d730";
+            }
+            
+            else{
+                str2.innerHTML = "do not match";
+                confirm.style.borderColor = "#ff5925";
+                msg2.style.color = "#ff5925";
+            }
+        }
+        else{
+            msg2.style.display = "none";
+        }
+    })
+
+        
+    </script>
+
+
+    <script>
+        var pass = document.getElementById("registerPassword");
+        var msg = document.getElementById("message");
+        var str = document.getElementById("strength");
+        
+        pass.addEventListener("input" , () =>{
+              if(pass.value.length > 0){
+                msg.style.display = "block";
+                
+              }
+              else{
+                msg.style.display = "none";
+                
+              }
+
+              //check the length
+              if(pass.value.length < 4){
+                str.innerHTML = "weak";
+                pass.style.borderColor = "#ff5925";
+                msg.style.color = "#ff5925";
+                
+              }
+
+              else if(pass.value.length >= 4 && pass.value.length < 8){
+                str.innerHTML = "medium";
+                pass.style.borderColor = "blue";
+                msg.style.color = "blue";
+              }
+
+              else if(pass.value.length > 8){
+                str.innerHTML = "strong";
+                pass.style.borderColor = "#26d730";
+                msg.style.color = "#26d730";
+              }
+        })
+
+       
+    </script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    
+    
+    
+    
+    
+    
+     <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const listItems = document.querySelectorAll('.navigation ul li');
+            
+            // Function to handle the click event
+            const handleClick = (item) => {
+                listItems.forEach(li => {
+                    li.classList.remove('hovered');
+                    li.style.backgroundColor = '';
+                    const link = li.querySelector('a');
+                    if (link) link.style.color = '';
+                });
+
+                item.classList.add('hovered');
+                item.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--white');
+                const link = item.querySelector('a');
+                if (link) link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--blue');
+            };
+
+            // Add click event listener to each list item
+            listItems.forEach(item => {
+                item.addEventListener('click', () => handleClick(item));
+            });
+
+            // Make the first list item selected by default
+            if (listItems.length > 0) {
+                handleClick(listItems[1]);
+            }
+        });
+    </script>
+    
+        <script>
+        
+        var pro = document.getElementById("profile");
+    
+       function dashboard(){
+           
+           var g = document.getElementById("aboutUs");
+           var h = document.getElementById("registerSection");
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           pro.style.display="none";
+           g.style.display="none";
+           h.style.display="block";
+           i.style.display="none";
+           j.style.display="none";
+           
+           
+       
+       }
+       
+       function about(){
+           
+           var g = document.getElementById("aboutUs");
+           var h = document.getElementById("registerSection");
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           pro.style.display="none";
+           g.style.display="block";
+           h.style.display="none";
+           i.style.display="none";
+           j.style.display="none";
+           
+           
+       
+       }
+       function service(){
+           
+           var g = document.getElementById("aboutUs");
+           var h = document.getElementById("registerSection");
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           pro.style.display="none";
+           g.style.display="none";
+           h.style.display="none";
+           i.style.display="block";
+           j.style.display="none";
+       
+       }
+       function contact(){
+           
+           var g = document.getElementById("aboutUs");
+           var h = document.getElementById("registerSection");
+           var i = document.getElementById("service-section");
+           var j = document.getElementById("contact-section");
+           
+           pro.style.display="none";
+           g.style.display="none";
+           h.style.display="none";
+           i.style.display="none";
+           j.style.display="block";
+       
+       }
+       function signout(){
+       
+           window.location.href="/signout";
+           
+       }
+       
+       function profile(){
+          var gu = document.getElementById("aboutUs");
+           var hu = document.getElementById("registerSection");
+           var iu = document.getElementById("service-section");
+           var ju = document.getElementById("contact-section");
+           
+           
+           gu.style.display="none";
+           hu.style.display="none";
+           iu.style.display="none";
+           ju.style.display="none";
+         pro.style.display="block";
+         
+         
+       }
+           
+    </script>
+</body>
+
+</html>

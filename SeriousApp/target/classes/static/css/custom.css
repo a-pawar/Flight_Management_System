@@ -1,0 +1,319 @@
+
+
+#bop_app
+{
+    padding-top: 68px;
+}
+
+#bop_app > section
+{
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+/** Start Section Header Bar **/
+#bop_header_bar
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #4f4a71;
+    border-bottom: 1px solid rgba(79,74,113,0.05);
+    z-index: 99999;
+}
+
+.bop_title_col
+{
+    padding-left: 0;
+}
+
+.bop_page_title_row
+{
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.bop_title
+{
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    color:black;
+    
+}
+/** End Section Header Bar **/
+
+/** Start Section Body **/
+#bop_body
+{
+    padding-bottom: 30px !important;
+}
+
+#bop_body .row
+{
+    padding: 0 25px;
+    padding-bottom: 25px; 
+}
+
+/** Start Body Page Tab **/
+#bop_body .row.bop_menu_tabs_row
+{
+    margin: 0;
+    padding: 15px 0;
+    background-color: #f1294b;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 20px 20px 0 0;
+}
+
+.bop_dep_time,
+.bop_arv_time
+{
+    display: block;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: -5px;
+    color: rgba(255,255,255,0.7);
+}
+
+.bop_country
+{
+    font-size: 50px;
+}
+
+.bop_city
+{
+    display: block;
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: -5px;
+    color: rgba(255,255,255,0.9);
+}
+
+i.fa-plane
+{
+    font-size: 50px;
+    transform: rotate(45deg);
+}
+
+.bop_travel_time
+{
+    display: block;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: -12px;
+    color: rgba(255,255,255,0.7);   
+}
+
+.bop_plane:before
+{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: transparent;
+    left: 50%;
+    margin-left: -2.5px;
+    top: 50%;
+    margin-top: -3.4px;
+    box-shadow: 20px 0 0 rgba(255,255,255,1),
+                35px 0 0 rgba(255,255,255,0.7),
+                50px 0 0 rgba(255,255,255,0.4),
+                65px 0 0 rgba(255,255,255,0.1),
+                -15px 0 0 rgba(255,255,255,1),
+                -30px 0 0 rgba(255,255,255,0.7),
+                -45px 0 0 rgba(255,255,255,0.4),
+                -60px 0 0 rgba(255,255,255,0.1);
+}
+
+/** End Body Page Tab **/
+
+/** Start Body Data **/
+
+#bop_body .bop_body_data
+{
+    margin: 0;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.bop_body_data > div
+{
+    padding: 15px 0;
+}
+
+.bop_body_data span
+{
+    display: block;
+}
+
+.bop_body_data .bop_data_title
+{
+    font-size: 25px;
+    font-weight: 600;
+    color: rgba(79,74,113,0.5);
+}
+
+.bop_body_data .bop_data_value
+{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(79,74,113,1);
+}
+
+.bop_body_data .bop_data_time
+{
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(79,74,113,0.5);   
+}
+
+
+/** End Body Data **/
+
+/** Start Boday Data 2 **/
+
+.bop_data_passenger
+{
+    margin: 0;
+    padding: 15px 10px !important;
+    background-color: rgba(79,74,113,0.02);
+}
+
+.bop_data_passenger:not(.last-passenger)
+{
+    border-bottom: 1px solid #fff;
+}
+
+.bop_data_passenger .bop_passenger_img img
+{
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+}
+
+.bop_data_passenger .bop_passenger_info > div
+{
+    padding-left: 10px;
+    line-height: 18px;
+    display: inline-grid;
+}
+
+.bop_data_passenger .bop_passenger_name
+{
+    font-size: 25px;
+    font-weight: 700;
+    color: rgba(79,74,113,1);
+    display: block;
+}
+
+.bop_data_passenger .bop_passenger_desc
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(79,74,113,0.5);
+}
+
+.bop_passenger_status
+{
+    padding: 0;
+}
+
+.bop_data_passenger .bop_passenger_seat
+{
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(79,74,113,0.05);
+}
+
+.bop_data_passenger .bop_passenger_seat img
+{
+    width: 20px;
+    height:20px;
+    opacity: 0.5;
+}
+
+.bop_data_passenger .bop_passenger_seat span
+{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(79,74,113,1);
+    margin-left: 2px;
+}
+
+/** End Body Data 2 **/
+
+/** Start Body Data 3 **/
+
+.bop_barcode_data
+{
+    position: relative;
+    margin: 0;
+    padding: 5px 10px !important;
+    padding-bottom: 25px !important;
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+    border-top: 1px dashed rgba(79,74,113,0.3);
+}
+
+.bop_barcode_title
+{
+    font-size: 12px;
+    font-weight: 600;
+    color: #fb042d;
+    text-transform: uppercase;
+}
+
+.bop_barcode img
+{
+    margin-top: 2px;
+    width: 100%;
+    height:30%;
+}
+
+.bop_barcode_data:before,
+.bop_barcode_data:after
+{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #fbfbfd;/*#fbfbfd;*/
+    border-radius: 100%;
+    top: 0;
+    margin-top: -12.5px;
+}
+
+.bop_barcode_data:before
+{
+    left: 0;
+    margin-left: -12.5px;
+    box-shadow: inset -25px 0 15px -20px rgba(79,74,113,0.2);
+}
+
+.bop_barcode_data:after
+{
+    right: 0;
+    margin-right: -12.5px;
+    box-shadow: inset 25px 0 15px -20px rgba(79,74,113,0.2);
+}
+
+/** End Body Data 3 **/
+
+.bop_body_container
+{
+    /*overflow: hidden;*/
+    border-radius: 20px;
+    border: 1px solid rgba(79,74,113,0.05);
+    box-shadow: 0 0 10px rgba(79,74,113,0.2),
+                0 40px 20px -30px  rgba(79,74,113,0.2);
+}

@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeLeaf.org">
+
+<head>
+   
+    <title>Responsive</title>
+     <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    /> 
+    
+    <link rel="stylesheet" th:href="@{/css/about.css}">
+     <link rel="stylesheet" th:href="@{/css/services.css}">
+     <link rel="stylesheet" th:href="@{/css/contact.css}">
+     <link rel="stylesheet" th:href="@{/css/profile.css}">
+     
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- ======= Styles ====== -->
+    <style>
+        /* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+:root {
+  --primary-color: #3d5cb8;
+  --primary-color-dark: #334c99;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --extra-light: #f1f5f9;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  color: var(--text-dark);
+}
+
+.button {
+    padding: 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  
+  background:linear-gradient(to right,#ff105f,#ffad06);
+  border-radius: 30px;
+  transition: .5s;
+  
+}
+
+.button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: flex;
+  
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+
+.booking__container {
+  border-radius: 3rem;
+  border: 1px solid var(--extra-light);
+  box-shadow: 51px 5px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin:15px;
+  margin-top:10%;
+}
+
+
+.booking__nav {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background:linear-gradient(to right,#ff105f,#ffad06);
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.booking__nav span{
+  flex: 1;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking__nav span:nth-child(1) {
+  color: var(--white);
+  background-color: var(--primary-color);
+  background:linear-gradient(to right,#ff105f,#ffad06);
+  border-radius: 30px;
+  transition: .5s;
+  
+}
+.booking__nav span.active {
+  /* Styles when the span is active (clicked) */
+  color: var(--white);
+  background-color: var(--primary-color);
+  background:linear-gradient(to right,#ff105f,#ffad06);
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.booking__container form {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1rem;
+}
+
+.booking__container .input__content {
+  width: 100%;
+}
+
+.booking__container .form__group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.booking__container .form__group span {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  background-color: var(--extra-light);
+  border-radius: 1rem;
+}
+
+.booking__container .input__group {
+  width: 100%;
+  position: relative;
+}
+
+.booking__container label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.booking__container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.booking__container .form__group p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.booking__container .form__group__dup {
+  margin-top: 0.5rem;
+  font-size: 1.0rem;
+  color: var(--text-light);
+  display: flex;
+    align-items: center;
+}
+
+.booking__container .button {
+  padding: 1rem;
+  font-size: 1.5rem;
+  width:100
+}
+
+
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.header{
+  
+  
+  height: 100%;
+  background: #fff;
+  width:100%;
+  /* border-left: 10px solid var(--blue); */
+  transition: 0.5s;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  color:black;
+  padding: 10px ;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  display: flex;
+  
+}
+
+.footer {
+    position: fixed;
+  width: 100%;
+  height: 7%;
+  bottom:0;
+  background: var(--black1);
+  border-left: 10px solid var(--black1);
+  transition: 0.5s;
+  overflow: hidden;
+ 
+  color:white;
+  padding: 10px;
+    }
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.navigation ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+
+.navigation ul li a img{
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+  margin-top: 10px;
+}
+.icon{
+
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body{
+    background: #ebe9e9;
+    
+}
+
+
+
+
+.hero {
+                height: 150%;
+                width: 100%;
+                /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('banner.jpg'); */
+               margin-top:-30px;
+                background-position: center;
+                background-size: cover;
+                position: absolute;
+            }
+            .form-box{
+                width:400px;
+                height:600px;
+                position: relative;
+                margin:6% auto;
+                background:#fff;
+                padding:5px;
+                
+                overflow: hidden;
+                border-radius: 50px;
+            }
+            .button-box{
+                width:220px;
+                margin:35px auto;
+                position: relative;
+                box-shadow: 0 0 20px 9px #ff61241f;
+                border-radius: 30px;
+            }
+
+            .toggle-btn{
+                cursor: pointer;
+                background: transparent;
+                outline:none;
+                border:0;
+                padding:10px 30px;
+                position: relative;
+            }
+            #btn{
+                top:0;
+                left:0;
+                position: absolute;
+                width:110px;
+                height:100%;
+                background:linear-gradient(to right,#ff105f,#ffad06);
+                border-radius: 30px;
+                transition: .5s;
+            }
+            .social-icons{
+                margin:30px auto;
+                text-align: center;
+            }
+            .social-icons img{
+                width:30px;
+                margin:0 12px;
+                box-shadow: 0 0 20px 0 #7f7f7f3d;
+                cursor: pointer;
+                border-radius: 50% ;
+            }
+
+            .input-group{
+                top:180px;
+                position: absolute;
+                width:280px;
+                transition:.5s;
+            }
+
+            .input-field{
+                width:100%;
+                padding:10px 0;
+                margin:10px 0;
+                border-left:0;
+                border-right:0;
+                border-top:0;
+                border-bottom:1px solid #999;
+                outline: none;
+                background: transparent;
+            }
+
+            .submit-btn{
+                width:85%;
+                padding:10px 30px;
+                cursor: pointer;
+                display: block;
+                margin:auto;
+                background:linear-gradient(to right,#ff105f,#ffad06);
+                border:0;
+                outline:none;
+                border-radius: 30px;
+            }
+
+            .check-box{
+                margin:30px 10px 30px 0;
+
+            }
+
+            .sp{
+                color:#777;
+                font-size: 12px;
+                bottom:94px;
+                position: absolute;
+            }
+
+            #login{
+                left:50px;
+            }
+            #register{
+                left:450px;
+            }
+
+
+            .input-wrapper {
+    position: relative;
+    
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.input-wrapper input[type="text"],
+.input-wrapper input[type="password"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+   
+}
+
+.input-wrapper input[type="text"]:focus,
+.input-wrapper input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+
+.input-wrapper input[type="email"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.input-wrapper input[type="email"]:focus {
+    border-color: #007bff; 
+}
+
+.input-wrapper input[type="date"] {
+    padding-left: 30px; 
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.input-wrapper input[type="date"]:focus {
+    border-color: #007bff; 
+}
+
+#message,#message2{
+    position: absolute;
+    
+    color:black;
+    font-size: 12px;
+    display: none;
+}
+
+.custom-alert {
+        padding: 15px;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+        background-color: #dff0d8;
+    }
+    
+    
+    
+    <!-- popup message styling starts-->
+    
+    .msg-container{
+        width:100%;
+        height:100vh;
+        background:#3c5077;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .msg-btn{
+        padding:10px 60px;
+        background: #fff;
+        border:0;
+        outline:none;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 30px;
+      }
+      .popup{
+        width:400px;
+        background: #fff;
+        border-radius: 6px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%) scale(1);
+        text-align: center;
+        padding: 0 30px 30px;
+        color:#333;
+        visibility: hidden;
+        transition: transform 0.4s, top 0.4s;
+      }
+      .popup img{
+        width:100px;
+        margin-top: -50px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      }
+      .popup h2{
+        font-size: 38px;
+        font-weight: 500;
+        margin:30px 0 10px;
+
+      }
+      .popup .msg-small-button{
+        width:100%;
+        margin-top: 50px;
+        padding: 10px 0;
+        background: #6fd649;
+        color:#fff;
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+      }
+
+      .open-popup{
+        visibility: visible;
+        top:50%;
+        transform: translate(-50%,-50%) scale(1);
+      }
+
+
+      
+
+      .form__group {
+    display: flex;
+    align-items: center;
+}
+
+.form__group span {
+    margin-right: 10px;
+}
+
+.input__content {
+    position: relative;
+}
+
+.input__group input {
+    width: 100%;
+}
+
+.keywords,.keywords2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: auto; /* Add scrollbar when needed */
+    max-height: 150px; /* Adjust the max-height as needed */
+    overflow-y: auto; /* Always display scrollbar */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color:#0f172a;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hide the dropdown */
+}
+
+.keywords ul,.keywords2 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.keywords ul li,.keywords2 ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.keywords ul li:hover,.keywords2 ul li:hover {
+  background:var(--primary-color); 
+  color:#fff;
+}
+
+.button-container {
+            text-align: center;
+        }
+
+        
+        
+        
+        
+        
+        
+        .card-container {
+            
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to next row */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards with suitable gap */
+}
+
+.card-container .card {
+    
+    width: 100%; /* Three columns layout */
+    background: #fff;
+    text-align: center;
+    padding: 15px 30px 30px 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.55);
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+
+        .card-container .card .top {
+            height: 130px;
+            background: red;
+            color: #fff;
+            padding: 12px 0 0 0;
+            clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+        }
+
+        .card-container .card .top .title {
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .card-container .card .top .price-sec {
+            margin-top: 2px;
+        }
+
+        .card-container .card .top .price-sec .price {
+            font-size: 40px;
+        }
+
+        .card-container .card .info {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .card-container .card .details .plan,.card-container .card .details .plans{
+            margin-top: 25px;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .card-container .card .details .plan::before,.card-container .card .details .plans::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height:1px;
+            background: #ddd;
+            left: 0;
+            top: -12px;
+        }
+
+        .card-container .card .plan i,.card-container .card .plans i{
+            color: #2db94d;
+        }
+
+        .card-container .card .plan i.fa-times, .card-container .card .plans i.fa-times {
+            color: #cd3241;
+        }
+
+        .card-container .card button {
+            outline: none;
+            border: none;
+            height: 42px;
+            display: block;
+            margin-top: 30px;
+            width: 100%;
+            background: red;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            
+        }
+        
+        /* Apply different background colors using nth-child selector */
+.card-container .card:nth-child(3n+1) .top,
+.card-container .card:nth-child(3n+1) button {
+    background: #14eb6e;
+}
+
+.card-container .card:nth-child(3n+2) .top,
+.card-container .card:nth-child(3n+2) button {
+    background: #e87130;
+}
+
+.card-container .card:nth-child(3n+3) .top,
+.card-container .card:nth-child(3n+3) button {
+    background: #11BCC3;
+}
+
+.dollar,.decimal{
+font-size:20px;
+}
+.light-bg {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+#footer.active{
+  filter: blur(0px);
+  pointer-events: none;
+  user-select: none;
+}
+
+#baad_me_use_kruga{
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
+
+#nav.active{
+  filter: blur(0px);
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.hidden{
+  display:none;
+}
+
+#myForm{
+  background: #f0f0f0;
+  margin-top:-5px;
+  margin-bottom: -5px;
+}
+
+
+p{
+  text-align: justify;
+}
+
+#toBeAdded_2,#toBeAdded_3,#toBeAdded_4,#toBeAdded{
+  display: none;
+}
+
+#toBeAdded.active,#toBeAdded_2.active,#toBeAdded_3.active,#toBeAdded_4.active{
+  display: block;
+}
+
+
+.delete-icon{
+  cursor: pointer;
+
+}
+
+#flights_section.active{
+  width: 12250%;
+}
+
+ #aboutUs,#service-section,#contact-section{
+        display:none;
+      }
+      
+      
+      
+      .profile-dropdown {
+  position: relative;
+  width: fit-content;
+  position: relative;
+  overflow:hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-dropdown-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 150px;
+  border-radius: 50px;
+  color: var(--black);
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+    border 0.3s;
+}
+
+.profile-dropdown-btn:hover {
+  background-color: var(--secondary-light-2);
+  box-shadow: var(--shadow);
+}
+
+
+.profile-dropdown-btn span {
+  margin: 0 0.5rem;
+  margin-right: 0;
+}
+
+.profile-dropdown-list {
+  position: absolute;
+  top: 68px;
+  width: 220px;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: max-height 0.5s;
+  z-index: 9999; /* Ensure this is higher than other elements */
+}
+
+.profile-dropdown-list hr {
+  border: 0.5px solid var(--green);
+}
+
+.profile-dropdown-list.active {
+  max-height: 500px;
+  
+}
+
+
+.profile-dropdown-list-item {
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  transition: background-color 0.2s ease-in, padding-left 0.2s;
+}
+
+.profile-dropdown-list-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.profile-dropdown-list-item a i {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  line-height: 2.3rem;
+  text-align: center;
+  margin-right: 1rem;
+  border-radius: 50%;
+  transition: margin-right 0.3s;
+  background:linear-gradient(-45deg,#4481eb,#04befe);
+}
+
+   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+:root {
+  --primary: #eeeeee;
+  --secondary: #227c70;
+  --green: #82cd47;
+  --secondary-light: rgb(34, 124, 112, 0.2);
+  --secondary-light-2: rgb(127, 183, 126, 0.1);
+  --white: #fff;
+  --black: #393e46;
+
+  --shadow: 0px 2px 8px 0px var(--secondary-light);
+}
+
+.profile-dropdown-list-item:hover {
+  padding-left: 1.5rem;
+  background: linear-gradient(-45deg, #7aaeff, #5ad4ff);
+  
+}
+ 
+#profile{
+   margin-left:35%;
+   margin-top:20px;
+   display:none;
+}
+
+
+.hidden {
+            display: none;
+        }
+
+
+body.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
+
+      
+    </style>
+    
+    
+    
+        <script th:inline="javascript">
+        function redirectToProfileValidation() {
+        
+            // Check if the redirection has already occurred
+            
+            if (!sessionStorage.getItem('suyashKhare')) {
+            
+                sessionStorage.setItem('suyashKhare', 'true');
+                
+                
+                
+                
+                window.location.href = '/profile_validation';
+            }
+            
+            else{
+                /*<![CDATA[*/
+        var storedEmail = /*[[${stored_email}]]*/ '';
+        var storedDob = /*[[${stored_dob}]]*/ '';
+        var userNames = /*[[${userName}]]*/ '';
+        /*]]>*/
+        console.log(storedEmail);   
+        // Check if all values are not null, not empty, and exist
+        if (storedEmail && storedDob && userNames) {
+            console.log("chala");   
+            sessionStorage.setItem('stored_email', storedEmail);
+            sessionStorage.setItem('stored_dob', storedDob);
+            sessionStorage.setItem('userName', userNames);
+        }
+        
+       
+            
+            }
+            
+            
+        }
+        
+        window.onload = redirectToProfileValidation();
+    </script>  
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container" id="back">
+        <div class="navigation" id="nav">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                           
+                           <img  th:src="@{/Images/departures.png}" alt="Facebook"/>
+
+                        </span>
+                        <span class="title">FlyHighHub.com</span>
+                    </a>
+                </li>
+
+                <li  id="default" onclick="dashboard();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li onclick="about();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">About Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="service();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="construct-outline"></ion-icon>
+                        </span>
+                        <span class="title">Our Services</span>
+                    </a>
+                </li>
+
+                <li onclick="contact();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="title">Contact Us</span>
+                    </a>
+                </li>
+
+                
+
+                <li onclick="signout();">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline" ></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+
+            <div class="topbar" >
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="header">
+                    <span >
+                        <i class="fa fa-plane" style="font-size:30px;"><strong>Flight Management System</strong></i> 
+                    </span>
+                    <div onclick="toggle_function()" class="user profile-dropdown" style="width:50px;height:50px;z-index:2222;">
+                       <div  class="profile-dropdown-btn">
+                        <img th:src="@{/Images/e.png}" alt="Facebook"/>
+                       </div>
+                    </div>
+                </div>
+
+                
+        </div>
+        
+        
+        <ul class="profile-dropdown-list">
+          <li class="profile-dropdown-list-item" onclick="profile();">
+            <a href="#">
+              <i class="fa-regular fa-user"></i>
+              Edit Profile
+            </a>
+          </li>
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-envelope"></i>
+              Inbox
+            </a>
+          </li>
+
+          
+
+          <li class="profile-dropdown-list-item" onclick="toggleMode();">
+            <a href="#">
+            
+             <span id="dark-mode" style="display: block;">
+               <i class="fa-solid fa-moon"></i>
+                 Dark Mode
+             </span>
+             
+             <span id="light-mode" style="display: none;">
+                   <i class="fa-solid fa-sun"></i>
+                   Light Mode
+             </span>
+
+             
+            </a>
+          </li>
+          
+ <script>
+ 
+    const darkModeText = document.getElementById('dark-mode');
+    const lightModeText = document.getElementById('light-mode');
+    
+    function toggleMode() {
+        // Toggle dark mode class on the body
+        document.body.classList.toggle('dark-mode');
+        
+        if (darkModeText.style.display === "none") {
+           darkModeText.style.display = "block";
+           lightModeText.style.display = "none";
+        } else {
+           darkModeText.style.display = "none";
+           lightModeText.style.display = "block";
+        }
+     }
+    
+ </script> 
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-regular fa-circle-question"></i>
+              Help & Support
+            </a>
+          </li>
+          <hr />
+
+          <li class="profile-dropdown-list-item">
+            <a href="#">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Log out
+            </a>
+          </li>
+</ul>
+      
+      
+      <script>
+        let profileDropdownList = document.querySelector(".profile-dropdown-list");
+let btn = document.querySelector(".profile-dropdown-btn");
+
+let classList = profileDropdownList.classList;
+
+console.log(classList);
+
+const toggle_function = () => classList.toggle("active");
+
+window.addEventListener("click", function (e) {
+
+  
+
+  if (!btn.contains(e.target)) classList.remove("active");
+  
+});
+
+    </script>
+    
+    
+        <!-- ========================= Profile Section ==================== -->
+    
+    
+    <div id="profile">
+    <div class="profile-card"  style="align-items:center; justify-content:center;">
+      <div class="image" style="margin-top: 70px;">
+        <img th:src="@{/Images/e.png}" alt="" class="profile-img" />
+        
+      </div>
+
+      <br>
+
+      <div class="text-data">
+      
+        <span class="name"></span>
+        
+        <script th:inline="javascript">
+           /*<![CDATA[*/
+           var userNamep = sessionStorage.getItem('userName');
+           var capitalizedUserName = userNamep.charAt(0).toUpperCase() + userNamep.slice(1);
+    
+           document.querySelector('.name').textContent = 'Hello ' + capitalizedUserName;
+           
+           /*]]>*/
+        </script>
+        
+      </div>
+
+      <div class="text-data " style="margin-top: 30px;">
+
+
+<form id="to_submit" th:action="@{update_details_of_profile}" method="POST">
+        <div class="beautiful-div">
+    <div class="entryarea">
+        <input type="text" name="updated_name" class="lele-input">
+        <div class="labelline" style="margin-left: 8px;">Username</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" type="email" style="pointer-events: none;cursor: not-allowed;">
+        <div class="labelline" style="margin-left: 8px;">Email</div>
+    </div>
+</div>
+
+<div class="beautiful-div">
+    <div class="entryarea">
+        <input class="lele-input" name="updated_dob" type="date" style="display:block">
+        <div class="labelline" style="margin-left: 8px;">Date of birth</div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    // Retrieve values from sessionStorage
+    var userName = sessionStorage.getItem('userName');
+    var storedEmail = sessionStorage.getItem('stored_email');
+    var storedDob = sessionStorage.getItem('stored_dob');
+
+    // Set values in the corresponding input fields
+    document.querySelector('.lele-input[type="text"]').value = userName;
+    document.querySelector('.lele-input[type="email"]').value = storedEmail;
+    document.querySelector('.lele-input[type="date"]').value = storedDob;
+    /*]]>*/
+</script>
+
+        
+      </div>
+
+
+
+
+      <div class="buttonsp">
+        <button type="submit" id="updateDetails-btn" class="buttonp">Update</button>
+      </div>
+
+</form>
+
+<script>
+    var tu = document.getElementById("updateDetails-btn");
+    var fg = document.getElementById("to_submit");
+    tu.addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        swal({
+	  title: "Are you sure?",
+	  text: "You want to update your details?",
+	  icon: "warning",
+	  buttons: true,
+	  dangerMode: true,
+	})
+	.then((willDelete) => {
+	
+	  if (willDelete) {
+	     sessionStorage.removeItem("suyashKhare");
+         fg.submit();
+	  } 
+	  
+	  else {
+		swal("Your details are safe!");
+	  }
+	});
+	
+        
+    });
+</script>
+
+
+      <div class="media-buttons">
+        <a href="#" style="background: #4267b2" class="link">
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a href="#" style="background: #1da1f2" class="link">
+          <i class="bx bxl-twitter"></i>
+        </a>
+        <a href="#" style="background: #e1306c" class="link">
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a href="#" style="background: #ff0000" class="link">
+          <i class="bx bxl-youtube"></i>
+        </a>
+      </div>
+
+      
+
+      
+    </div>
+    
+    </div>        
+        <!-- ========================= Contact Us ==================== -->
+        
+<section class="contact-section" id="contact-section" style="margin:20px;">       
+        <div class="contact-container">
+      <span class="big-circle"></span>
+      <img th:src="@{/Images/contact-images/shape.png}" class="square" alt="" />
+      <div class="form-for-contact" style="margin-top:-80px;">
+        <div class="contact-info">
+          <h3 class="contact-title">Let's get in touch</h3>
+          <p class="text">
+            
+To share your feedback/complaints/suggestions or to reach out to our Customer Experience Team.
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img th:src="@{/Images/contact-images/location.png}" class="icon" alt="" />
+              <p>92 Cherry Drive Uniondale, NY 11553</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/email.png}" class="icon" alt="" />
+              <p>lorem@ipsum.com</p>
+            </div>
+            <div class="information">
+              <img th:src="@{/Images/contact-images/phone.png}"  class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            <div class="contact-social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form id="contact-form-hun" th:action="@{/contact_support}" method="POST" autocomplete="off">
+            <h3 class="contact-title">Contact us</h3>
+            <div class="input-container">
+              <input type="text" name="contact_name" class="input" />
+              <label for="">Username</label>
+              <span>Username</span>
+            </div>
+            <div class="input-container">
+              <input type="email" name="contact_email" class="input" />
+              <label for="">Email</label>
+              <span>Email</span>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="contact_phone" class="input" />
+              <label for="">Phone</label>
+              <span>Phone</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="contact_message" class="input"></textarea>
+              <label for="">Message</label>
+              <span>Message</span>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+    <script>
+
+
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+    </script>
+        
+         <!-- ========================= Our Services ==================== -->
+         
+         <section class="service-section" id="service-section" style="margin:20px;max-height:700px;overflow-y:auto;">
+      <div class="services-row">
+        <center><h1 class="section-heading" style="font-size:30px;margin-left:20px;color: #2c7bfe;text-decoration:underline;">Our Services:</h1></center>
+      </div>
+      <br>
+      <div class="services-row">
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-plane"></i>
+            </div>
+            <h3 class="heading-3">Flight Booking</h3>
+            <p class="para">
+                Book flights to numerous domestic and international destinations with ease.
+                Access to a wide range of dates to fit your schedule and budget.
+
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="heading-3">Group Bookings</h3>
+            <p class="para">
+                Specialized services for corporate clients, including bulk bookings and corporate discounts.
+                Avail of special discounts and services for group travel.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3 class="heading-3">Secure Payment Options</h3>
+            <p class="para">
+                Pay securely using credit cards, debit cards, and other payment methods.
+                Your payment information is protected with advanced security measures.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-edit"></i>
+            </div>
+            <h3 class="heading-3">Booking Management</h3>
+            <p class="para">
+                Modify or cancel your bookings effortlessly through our user-friendly platform.
+                Receive your e-tickets via email and access them anytime, anywhere.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="heading-3">Travel Insurance</h3>
+            <p class="para">
+                Protect your trip with travel insurance covering cancellations, medical emergencies, and more.
+            </p>
+          </div>
+        </div>
+        <div class="services-column">
+          <div class="service-card">
+            <div class="icon-wrapper">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="heading-3">Customer Support</h3>
+            <p class="para">
+                Our dedicated support team is available around the clock to assist you with any queries or issues.
+                Get instant help through our live chat feature for quick resolutions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+         <!-- ========================= About Us ==================== -->
+         
+      <section id="aboutUs" style="background:#fff;margin:20px;">
+        <div class="heading">  
+            <h1>About Us</h1>  
+            <p>  
+              FlyHighHub.com is one of the leading travel organisations in India, aiming to offer exclusive travel services to diverse explorers.  
+            </p>  
+        </div>  
+        
+       <div class="about-container">  
+           <section class="about">  
+             <div class="about-image">  
+               <img th:src="@{Images/suyash.jpg}">  
+             </div>  
+       <div class="abou-content">  
+         <h2>Established in 2008: Pioneering India's Online Travel Landscape</h2>  
+         <p> Established in 2008,  FlyHighHub.com is India’s second-largest* online travel platform.  
+            Operating initially from a small space, we overcame challenges through determination and familial support, evolving into a resilient entity ensuring financial stability. Transitioning to a customer-facing model in 2011, we adopted a 'no convenience fee' policy, attracting a loyal customer base with transparent pricing and exceptional service.
+         </p>  
+         <a href="" class="read-more" >Read More</a>  
+       </div>  
+        </section>  
+      </div>  
+     </section>
+
+           
+        
+        
+
+
+
+                  
+                  
+                  
+                  
+                   <!-- Section to be viewed to -->
+                   <section id="travellerSection" style="margin-top:10px;height:426px;border-radius: 2px;" class="section__container booking__container" 
+                   th:if="${capturedFlightName != null and capturedPrice != null and capturedArrival != null and capturedDeparture != null and capturedSeatsAvailable != null}">
+                             
+                      
+                               <h1 style="margin-top:-75px;color:#4070F4;">Booking Details:</h1>
+               <div class="card-container" style="margin-top:6px">
+                   <div class="card one" style="height:370px">
+                       <div class="top">
+                           <div class="title" th:text="${capturedFlightName}"></div>
+                           <div class="price-sec">
+                               <!-- If needed, you can add price information here -->
+                              <span class="dollar">&#8377;</span>
+                              
+                              <span class="price" th:text="${capturedPrice}"></span>
+                              <span class="decimal">.99</span>
+                           </div>
+                       </div>
+                       <div class="info">More Information:</div>
+                       <div class="details">
+                       
+                       <div class="plan">
+                           Arrival: <span th:text="${capturedArrival}" class="arrival"></span>
+                           <i class="fas fa-check"></i>
+                       </div>
+                       <div class="plan">
+                           Departure: <span th:text="${capturedDeparture}" class="departure"></span>
+                           <i class="fas fa-check"></i>
+                       </div>
+                       <div class="plan">
+                           Seats Left: <span th:text="${capturedSeatsAvailable}" class="seats"></span>
+                           <i class="fas fa-times"></i>
+                       </div>
+                       <div class="plan">
+                           <span>Discount Apply</span>
+                           <i class="fas fa-times"></i>
+                       </div>
+                       
+                           
+                       </div>
+                       
+                   </div>
+               </div> 
+                
+               </section>
+           
+
+
+    <!-- Section to be booked to -->
+    <section id="flightsSection" style="margin-top:10px;height:auto;border-radius: 2px;" class="section__container booking__container" 
+        th:if="${capturedFlightName != null and capturedPrice != null and capturedArrival != null and capturedDeparture != null and capturedSeatsAvailable != null}">
+                  
+           
+        <h1 style="margin-top:-75px;color:#4070F4;">Travellers Details:</h1>
+<div class="card-container" style="margin-top:6px;">
+<div class="card one" style="height:auto;">
+
+<div class="details">
+
+<div class="plan" id="toBeAdded">
+    
+     <!-- here you need to add name dynamically -->
+     <!-- details enter -->
+   
+    <form id="myForm" class="MultipleRecord_1" th:action="@{/passenger}" method="POST">
+
+
+      
+    
+    <input type="hidden" id="capturedFlightName" name="capturedFlightName" th:value="${capturedFlightName}">
+    <input type="hidden" id="capturedPrice" name="capturedPrice" th:value="${capturedPrice}">
+    <input type="hidden" id="capturedArrival" name="capturedArrival" th:value="${capturedArrival}">
+    <input type="hidden" id="capturedDeparture" name="capturedDeparture" th:value="${capturedDeparture}">
+    <input type="hidden" id="capturedSeatsAvailable" name="capturedSeatsAvailable" th:value="${capturedSeatsAvailable}">
+    
+       
+        <div class="form__group">
+          <span><i class="fas fa-user"></i></span>
+          <div class="input__content">
+
+            <div class="input__group" id="row">
+
+              <input type="text" id="location" autocomplete="off" style="background: #f0f0f0;" name="firstName_1"/>
+              <label id="locationLabel">First Name</label>
+
+            </div>
+
+            <div class="keywords">
+
+            </div>
+
+            <p>Please Enter Your First Name</p>
+          </div>
+          
+        </div>
+
+        <div class="form__group">
+            <span><i class="fas fa-user"></i></span>
+            <div class="input__content">
+  
+              <div class="input__group" id="row">
+  
+                <input type="text" id="location2" autocomplete="off" style="background: #f0f0f0;" name="lastName_1"/>
+                <label id="locationLabel2">Last Name</label>
+  
+              </div>
+  
+              <div class="keywords">
+  
+              </div>
+  
+              <p>Please Enter Your Last Name</p>
+            </div>
+            
+          </div>
+
+
+        <div class="form__group">
+          <span><i class="fas fa-calendar-alt"></i></span>
+          <div class="input__content">
+        
+            <div class="input__group" id="row">
+        
+              <input type="number" id="Destlocation" autocomplete="off" style="background: #f0f0f0;" name="age_1"/>
+              <label id="DestLabel">Age</label>
+        
+            </div>
+        
+            <div class="keywords2">
+        
+            </div>
+        
+            <p>Please Enter Your Age</p>
+          </div>
+          
+        </div>
+
+        <script>
+
+var locationInput = document.getElementById("location");
+var locationLabel = document.getElementById("locationLabel");
+
+
+var locationInput3 = document.getElementById("location2");
+var locationLabel3 = document.getElementById("locationLabel2");
+
+locationInput.addEventListener("focus", () => {
+locationLabel.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput.addEventListener("blur", () => {
+if (locationInput.value.trim() === "") {
+locationLabel.textContent = "First Name"; // Restore label content if input is empty
+}
+});
+
+locationInput3.addEventListener("focus", () => {
+locationLabel3.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput3.addEventListener("blur", () => {
+if (locationInput3.value.trim() === "") {
+locationLabel3.textContent = "Last Name"; // Restore label content if input is empty
+}
+});
+
+
+var locationInput2 = document.getElementById("Destlocation");
+var locationLabel2 = document.getElementById("DestLabel");
+
+locationInput2.addEventListener("focus", () => {
+locationLabel2.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput2.addEventListener("blur", () => {
+if (locationInput2.value.trim() === "") {
+locationLabel2.textContent = "Age"; // Restore label content if input is empty
+}
+});        
+</script>
+
+
+
+
+
+        <div class="form__group">
+          <span><i class="fas fa-flag"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              <input type="text" id="trave" style="background: #f0f0f0;" name="nation_1"/>
+              <label id="traveLabel">Nationality</label>
+            </div>
+            <p>Add your country name</p>
+          </div>
+        </div>
+
+        <div class="form__group">
+          <span class="delete-icon"><i class="fas fa-trash" style="color:red"></i></span>
+          <div class="input__content">
+            <div class="input__group">
+              
+            </div>
+            
+          </div>
+        </div>
+
+        <script>
+          var travelInput = document.getElementById("trave");
+var travelLabel = document.getElementById("traveLabel");
+
+travelInput.addEventListener("focus", () => {
+travelLabel.textContent = ""; // Clear the label content when input is focused
+});
+
+travelInput.addEventListener("blur", () => {
+if (travelInput.value.trim() === "") {
+travelLabel.textContent = "Nationality"; // Restore label content if input is empty
+}
+});
+        </script>
+
+
+
+      </form>
+     
+</div>
+
+
+
+
+<!-- second form -->
+<div class="plan" id="toBeAdded_2">
+    
+  <!-- here you need to add name dynamically -->
+  <!-- details enter -->
+
+ <form id="myForm" class="MultipleRecord_2" th:action="@{/passenger}" method="POST">
+
+
+   
+ 
+ <input type="hidden" id="capturedFlightName" name="capturedFlightName" th:value="${capturedFlightName}">
+ <input type="hidden" id="capturedPrice" name="capturedPrice" th:value="${capturedPrice}">
+ <input type="hidden" id="capturedArrival" name="capturedArrival" th:value="${capturedArrival}">
+ <input type="hidden" id="capturedDeparture" name="capturedDeparture" th:value="${capturedDeparture}">
+ <input type="hidden" id="capturedSeatsAvailable" name="capturedSeatsAvailable" th:value="${capturedSeatsAvailable}">
+ 
+    
+     <div class="form__group">
+       <span><i class="fas fa-user"></i></span>
+       <div class="input__content">
+
+         <div class="input__group" id="row">
+
+           <input type="text" id="location32" autocomplete="off" style="background: #f0f0f0;" name="firstName_2"/>
+           <label id="locationLabel32">First Name</label>
+
+         </div>
+
+         <div class="keywords">
+
+         </div>
+
+         <p>Please Enter Your First Name</p>
+       </div>
+       
+     </div>
+
+     <div class="form__group">
+         <span><i class="fas fa-user"></i></span>
+         <div class="input__content">
+
+           <div class="input__group" id="row">
+
+             <input type="text" id="location42" autocomplete="off" style="background: #f0f0f0;" name="lastName_2"/>
+             <label id="locationLabel42">Last Name</label>
+
+           </div>
+
+           <div class="keywords">
+
+           </div>
+
+           <p>Please Enter Your Last Name</p>
+         </div>
+         
+       </div>
+
+
+     <div class="form__group">
+       <span><i class="fas fa-calendar-alt"></i></span>
+       <div class="input__content">
+     
+         <div class="input__group" id="row">
+     
+           <input type="number" id="Destlocation4" autocomplete="off" style="background: #f0f0f0;" name="age_2"/>
+           <label id="DestLabel4">Age</label>
+     
+         </div>
+     
+         <div class="keywords2">
+     
+         </div>
+     
+         <p>Please Enter Your Age</p>
+       </div>
+       
+     </div>
+
+     <script>
+
+var locationInput32 = document.getElementById("location32");
+var locationLabel32 = document.getElementById("locationLabel32");
+
+
+var locationInput42 = document.getElementById("location42");
+var locationLabel42 = document.getElementById("locationLabel42");
+
+locationInput32.addEventListener("focus", () => {
+locationLabel32.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput32.addEventListener("blur", () => {
+if (locationInput32.value.trim() === "") {
+locationLabel32.textContent = "First Name"; // Restore label content if input is empty
+}
+});
+
+locationInput42.addEventListener("focus", () => {
+locationLabel42.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput42.addEventListener("blur", () => {
+if (locationInput42.value.trim() === "") {
+locationLabel42.textContent = "Last Name"; // Restore label content if input is empty
+}
+});
+
+
+var locationInput5 = document.getElementById("Destlocation4");
+var locationLabel5 = document.getElementById("DestLabel4");
+
+locationInput5.addEventListener("focus", () => {
+locationLabel5.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput5.addEventListener("blur", () => {
+if (locationInput5.value.trim() === "") {
+locationLabel5.textContent = "Age"; // Restore label content if input is empty
+}
+});        
+</script>
+
+
+
+
+
+     <div class="form__group">
+       <span><i class="fas fa-flag"></i></span>
+       <div class="input__content">
+         <div class="input__group">
+           <input type="text" id="trave2" style="background: #f0f0f0;" name="nation_2"/>
+           <label id="traveLabel2">Nationality</label>
+         </div>
+         <p>Add your country name</p>
+       </div>
+     </div>
+
+     <div class="form__group">
+      <span class="delete-icon"><i class="fas fa-trash" style="color:red"></i></span>
+      <div class="input__content">
+        <div class="input__group">
+          
+        </div>
+        
+      </div>
+    </div>
+
+     <script>
+       var travelInput2 = document.getElementById("trave2");
+var travelLabel2 = document.getElementById("traveLabel2");
+
+travelInput2.addEventListener("focus", () => {
+travelLabel2.textContent = ""; // Clear the label content when input is focused
+});
+
+travelInput2.addEventListener("blur", () => {
+if (travelInput2.value.trim() === "") {
+travelLabel2.textContent = "Nationality"; // Restore label content if input is empty
+}
+});
+     </script>
+
+
+
+   </form>
+  
+</div>
+
+<!-- third form -->
+
+<div class="plan" id="toBeAdded_3">
+    
+  <!-- here you need to add name dynamically -->
+  <!-- details enter -->
+
+ <form id="myForm" class="MultipleRecord_3" th:action="@{/passenger}" method="POST">
+
+
+   
+ 
+ <input type="hidden" id="capturedFlightName" name="capturedFlightName" th:value="${capturedFlightName}">
+ <input type="hidden" id="capturedPrice" name="capturedPrice" th:value="${capturedPrice}">
+ <input type="hidden" id="capturedArrival" name="capturedArrival" th:value="${capturedArrival}">
+ <input type="hidden" id="capturedDeparture" name="capturedDeparture" th:value="${capturedDeparture}">
+ <input type="hidden" id="capturedSeatsAvailable" name="capturedSeatsAvailable" th:value="${capturedSeatsAvailable}">
+ 
+    
+     <div class="form__group">
+       <span><i class="fas fa-user"></i></span>
+       <div class="input__content">
+
+         <div class="input__group" id="row">
+
+           <input type="text" id="location11" autocomplete="off" style="background: #f0f0f0;" name="firstName_3"/>
+           <label id="locationLabel11">First Name</label>
+
+         </div>
+
+         <div class="keywords">
+
+         </div>
+
+         <p>Please Enter Your First Name</p>
+       </div>
+       
+     </div>
+
+     <div class="form__group">
+         <span><i class="fas fa-user"></i></span>
+         <div class="input__content">
+
+           <div class="input__group" id="row">
+
+             <input type="text" id="location12" autocomplete="off" style="background: #f0f0f0;" name="lastName_3"/>
+             <label id="locationLabel12">Last Name</label>
+
+           </div>
+
+           <div class="keywords">
+
+           </div>
+
+           <p>Please Enter Your Last Name</p>
+         </div>
+         
+       </div>
+
+
+     <div class="form__group">
+       <span><i class="fas fa-calendar-alt"></i></span>
+       <div class="input__content">
+     
+         <div class="input__group" id="row">
+     
+           <input type="number" id="Destlocation13" autocomplete="off" style="background: #f0f0f0;" name="age_3"/>
+           <label id="DestLabel13">Age</label>
+     
+         </div>
+     
+         <div class="keywords2">
+     
+         </div>
+     
+         <p>Please Enter Your Age</p>
+       </div>
+       
+     </div>
+
+     <script>
+
+var locationInput11 = document.getElementById("location11");
+var locationLabel11 = document.getElementById("locationLabel11");
+
+
+var locationInput12 = document.getElementById("location12");
+var locationLabel12 = document.getElementById("locationLabel12");
+
+locationInput11.addEventListener("focus", () => {
+locationLabel11.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput11.addEventListener("blur", () => {
+if (locationInput11.value.trim() === "") {
+locationLabel11.textContent = "First Name"; // Restore label content if input is empty
+}
+});
+
+locationInput12.addEventListener("focus", () => {
+locationLabel12.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput12.addEventListener("blur", () => {
+if (locationInput12.value.trim() === "") {
+locationLabel12.textContent = "Last Name"; // Restore label content if input is empty
+}
+});
+
+
+var locationInput13 = document.getElementById("Destlocation13");
+var locationLabel13 = document.getElementById("DestLabel13");
+
+locationInput13.addEventListener("focus", () => {
+locationLabel13.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput13.addEventListener("blur", () => {
+if (locationInput13.value.trim() === "") {
+locationLabel13.textContent = "Age"; // Restore label content if input is empty
+}
+});        
+</script>
+
+
+
+
+
+     <div class="form__group">
+       <span><i class="fas fa-flag"></i></span>
+       <div class="input__content">
+         <div class="input__group">
+           <input type="text" id="trave11" style="background: #f0f0f0;" name="nation_3"/>
+           <label id="traveLabel11">Nationality</label>
+         </div>
+         <p>Add your country name</p>
+       </div>
+     </div>
+
+     <div class="form__group">
+      <span class="delete-icon"><i class="fas fa-trash" style="color:red"></i></span>
+      <div class="input__content">
+        <div class="input__group">
+          
+        </div>
+        
+      </div>
+    </div>
+
+     <script>
+       var travelInput11 = document.getElementById("trave11");
+var travelLabel11 = document.getElementById("traveLabel11");
+
+travelInput11.addEventListener("focus", () => {
+travelLabel11.textContent = ""; // Clear the label content when input is focused
+});
+
+travelInput11.addEventListener("blur", () => {
+if (travelInput11.value.trim() === "") {
+travelLabel11.textContent = "Nationality"; // Restore label content if input is empty
+}
+});
+     </script>
+
+
+
+   </form>
+  
+</div>
+
+
+<!-- fourth one -->
+
+<div class="plan" id="toBeAdded_4">
+    
+  <!-- here you need to add name dynamically -->
+  <!-- details enter -->
+
+ <form id="myForm" class="MultipleRecord_4" th:action="@{/passenger}" method="POST">
+
+
+   
+ 
+ <input type="hidden" id="capturedFlightName" name="capturedFlightName" th:value="${capturedFlightName}">
+ <input type="hidden" id="capturedPrice" name="capturedPrice" th:value="${capturedPrice}">
+ <input type="hidden" id="capturedArrival" name="capturedArrival" th:value="${capturedArrival}">
+ <input type="hidden" id="capturedDeparture" name="capturedDeparture" th:value="${capturedDeparture}">
+ <input type="hidden" id="capturedSeatsAvailable" name="capturedSeatsAvailable" th:value="${capturedSeatsAvailable}">
+ 
+    
+     <div class="form__group">
+       <span><i class="fas fa-user"></i></span>
+       <div class="input__content">
+
+         <div class="input__group" id="row">
+
+           <input type="text" id="location212" autocomplete="off" style="background: #f0f0f0;" name="firstName_4"/>
+           <label id="locationLabel212">First Name</label>
+
+         </div>
+
+         <div class="keywords">
+
+         </div>
+
+         <p>Please Enter Your First Name</p>
+       </div>
+       
+     </div>
+
+     <div class="form__group">
+         <span><i class="fas fa-user"></i></span>
+         <div class="input__content">
+
+           <div class="input__group" id="row">
+
+             <input type="text" id="location223" autocomplete="off" style="background: #f0f0f0;" name="lastName_4"/>
+             <label id="locationLabel223">Last Name</label>
+
+           </div>
+
+           <div class="keywords">
+
+           </div>
+
+           <p>Please Enter Your Last Name</p>
+         </div>
+         
+       </div>
+
+
+     <div class="form__group">
+       <span><i class="fas fa-calendar-alt"></i></span>
+       <div class="input__content">
+     
+         <div class="input__group" id="row">
+     
+           <input type="number" id="Destlocation211" autocomplete="off" style="background: #f0f0f0;" name="age_4"/>
+           <label id="DestLabel211">Age</label>
+     
+         </div>
+     
+         <div class="keywords2">
+     
+         </div>
+     
+         <p>Please Enter Your Age</p>
+       </div>
+       
+     </div>
+
+     <script>
+
+var locationInput212 = document.getElementById("location212");
+var locationLabel212 = document.getElementById("locationLabel212");
+
+
+var locationInput223 = document.getElementById("location223");
+var locationLabel223 = document.getElementById("locationLabel223");
+
+locationInput212.addEventListener("focus", () => {
+locationLabel212.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput212.addEventListener("blur", () => {
+if (locationInput212.value.trim() === "") {
+locationLabel212.textContent = "First Name"; // Restore label content if input is empty
+}
+});
+
+locationInput223.addEventListener("focus", () => {
+locationLabel223.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput223.addEventListener("blur", () => {
+if (locationInput223.value.trim() === "") {
+locationLabel223.textContent = "Last Name"; // Restore label content if input is empty
+}
+});
+
+
+var locationInput211 = document.getElementById("Destlocation211");
+var locationLabel211 = document.getElementById("DestLabel211");
+
+locationInput211.addEventListener("focus", () => {
+locationLabel211.textContent = ""; // Clear the label content when input is focused
+});
+
+locationInput211.addEventListener("blur", () => {
+if (locationInput211.value.trim() === "") {
+locationLabel211.textContent = "Age"; // Restore label content if input is empty
+}
+});        
+</script>
+
+
+
+
+
+     <div class="form__group">
+       <span><i class="fas fa-flag"></i></span>
+       <div class="input__content">
+         <div class="input__group">
+           <input type="text" id="trave121" style="background: #f0f0f0;" name="nation_4"/>
+           <label id="traveLabel121">Nationality</label>
+         </div>
+         <p>Add your country name</p>
+       </div>
+     </div>
+
+     <div class="form__group">
+      <span class="delete-icon"><i class="fas fa-trash" style="color:red"></i></span>
+      <div class="input__content">
+        <div class="input__group">
+          
+        </div>
+        
+      </div>
+    </div>
+
+
+
+
+
+     <script>
+       var travelInput121 = document.getElementById("trave121");
+var travelLabel121 = document.getElementById("traveLabel121");
+
+travelInput121.addEventListener("focus", () => {
+travelLabel121.textContent = ""; // Clear the label content when input is focused
+});
+
+travelInput121.addEventListener("blur", () => {
+if (travelInput121.value.trim() === "") {
+travelLabel121.textContent = "Nationality"; // Restore label content if input is empty
+}
+});
+     </script>
+
+
+
+   </form>
+  
+</div>
+
+<!-- finish -->
+
+
+<div class="plans">
+    <span ><a href="#" style="color:#4070F4;" onclick="addAdultForm();" id="link-click"><i class="fas fa-plus" style="color:#4070F4;"></i>Add Adult</a></span>
+    
+
+</div>
+
+    
+</div>
+
+</div>
+</div> 
+
+
+<div style="text-align: center;margin-top: 25px;">
+  <button id="final-submit" class="button" style="font-size: 22px;border-radius: 10px;background-color: #14eb6e;" onclick="validateAndSubmit()"><i class="fas fa-step-forward" style="font-size: 25px;"></i> Proceed To Payment</button>
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- ========================= For signout ==================== -->
+    <!-- Include your scripts here -->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        // Check if there's a message in the flash attributes
+        var messagespx = /*[[${messageLogOut}]]*/ null;
+        
+        console.log(messagespx);
+        
+        console.log(messagespx);
+        if (messagespx && messagespx.trim().length > 0) {
+        
+                    // Display the message using SweetAlert
+            if (messagespx === "Please Log In First!") {
+                swal({
+                    title: "Failure!",
+                    text: messagespx,
+                    icon: "error",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                  });
+            } else {
+                swal({
+                    title: "Success!",
+                    text: messagespx,
+                    icon: "success",
+                    buttons: {
+                        confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "swal-button--confirm",
+                            closeModal: true
+                        }
+                    }
+                });
+            }
+            
+         }
+        
+        /*]]>*/
+    </script>
+                  
+        
+
+
+
+        <!-- ========================= Footer ==================== -->
+
+        <div class="footer" id="footer" style="display: flex;">
+            <span style="margin-right: auto;">
+                Flight Reservation System 2024
+            </span>
+            
+        </div>
+        
+        <!-- ========================= hidden form combine ==================== -->
+        
+        <form id="combineAll" th:action="@{/passenger}" method="POST">
+        
+        <!-- Hidden inputs -->
+        <input type="hidden" id="capturedFlightName" name="capturedFlightName" th:value="${capturedFlightName}">
+        <input type="hidden" id="capturedPrice" name="capturedPrice" th:value="${capturedPrice}">
+        <input type="hidden" id="capturedArrival" name="capturedArrival" th:value="${capturedArrival}">
+        <input type="hidden" id="capturedDeparture" name="capturedDeparture" th:value="${capturedDeparture}">
+        <input type="hidden" id="capturedSeatsAvailable" name="capturedSeatsAvailable" th:value="${capturedSeatsAvailable}">
+        
+        
+        <input type="hidden" id="hidden_1_1" name="firstName_1"/>
+        <input type="hidden" id="hidden_1_2" name="lastName_1"/>
+        <input type="hidden" id="hidden_1_3" name="age_1"/>
+        <input type="hidden" id="hidden_1_4" name="nation_1"/>
+        
+        <input type="hidden" id="hidden_2_1" name="firstName_2"/>
+        <input type="hidden" id="hidden_2_2" name="lastName_2"/>
+        <input type="hidden" id="hidden_2_3" name="age_2"/>
+        <input type="hidden" id="hidden_2_4" name="nation_2"/>
+        
+        <input type="hidden" id="hidden_3_1" name="firstName_3"/>
+        <input type="hidden" id="hidden_3_2" name="lastName_3"/>
+        <input type="hidden" id="hidden_3_3" name="age_3"/>
+        <input type="hidden" id="hidden_3_4" name="nation_3"/>
+        
+        <input type="hidden" id="hidden_4_1" name="firstName_4"/>
+        <input type="hidden" id="hidden_4_2" name="lastName_4"/>
+        <input type="hidden" id="hidden_4_3" name="age_4"/>
+        <input type="hidden" id="hidden_4_4" name="nation_4"/>
+        
+        
+        </form>
+        
+        <!-- ========================= ends ==================== -->
+        
+
+
+
+        <!-- deleting the div -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+
+    var deleteIcon = document.querySelector('#toBeAdded .delete-icon');
+    deleteIcon.addEventListener('click', function() {
+        var elementToDelete = document.querySelector('#toBeAdded');
+        elementToDelete.classList.remove("active");
+    });
+
+    var deleteIcon2 = document.querySelector('#toBeAdded_2 .delete-icon');
+    deleteIcon2.addEventListener('click', function() {
+        var elementToDelete2 = document.querySelector('#toBeAdded_2');
+        elementToDelete2.classList.remove("active");
+    });
+
+    var deleteIcon3 = document.querySelector('#toBeAdded_3 .delete-icon');
+    deleteIcon3.addEventListener('click', function() {
+        var elementToDelete3 = document.querySelector('#toBeAdded_3');
+        elementToDelete3.classList.remove("active");
+    });
+
+
+    var deleteIcon4 = document.querySelector('#toBeAdded_4 .delete-icon');
+    deleteIcon4.addEventListener('click', function() {
+        var elementToDelete4 = document.querySelector('#toBeAdded_4');
+        elementToDelete4.classList.remove("active");
+    });
+
+
+});
+
+        </script>
+
+       
+        <script>
+          var submitButton = document.getElementById('submitButton');
+          var form = document.getElementById('myForm');
+
+        
+          document.getElementById("submitButton").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Populate hidden inputs with the relevant values
+    document.getElementById("capturedFlightName").value = document.querySelector(".title").textContent;
+    document.getElementById("capturedPrice").value = document.querySelector(".price").textContent;
+    document.getElementById("capturedArrival").value = document.querySelector(".arrival").textContent;
+    document.getElementById("capturedDeparture").value = document.querySelector(".departure").textContent;
+    document.getElementById("capturedSeatsAvailable").value = document.querySelector(".seats").textContent;
+    
+    
+    // Populate visible input fields
+    document.querySelector("[name='firstName']").value = document.getElementById("location").value;
+    document.querySelector("[name='lastName']").value = document.getElementById("location2").value;
+    document.querySelector("[name='age']").value = document.getElementById("Destlocation").value;
+    document.querySelector("[name='nation']").value = document.getElementById("trave").value;
+    
+    
+    
+
+    // Get the form and submit it programmatically
+    var form = document.getElementById("myForm");
+    form.submit();
+});
+          
+        </script>
+
+
+
+    <script>
+
+function addAdultForm() {
+  var element = document.getElementById('toBeAdded');
+  var element1 = document.getElementById('toBeAdded_2');
+  var element2 = document.getElementById('toBeAdded_3');
+  var element3 = document.getElementById('toBeAdded_4');
+  
+  // Check if element is hidden
+  if(element){
+  var style = window.getComputedStyle(element);
+  if(style.display === 'none') {
+    console.log("haa 1");
+    element.classList.add("active");
+    return; // Exit the function if the element is hidden
+  }
+ }
+  
+  // Check if element1 is hidden
+  if(element1){
+  style = window.getComputedStyle(element1);
+  if(style.display === 'none') {
+    console.log("haa 2");
+    element1.classList.add("active");
+    return; // Exit the function if element1 is hidden
+  }
+}
+  
+  // Check if element2 is hidden
+  if(element2){
+  style = window.getComputedStyle(element2);
+  if(style.display === 'none') {
+    console.log("haa 3");
+    element2.classList.add("active");
+    return; // Exit the function if element2 is hidden
+  }
+}
+  
+  // Check if element3 is hidden
+  if(element3){
+  style = window.getComputedStyle(element3);
+  if(style.display === 'none') {
+    console.log("haa 4");
+    element3.classList.add("active");
+    return; // Exit the function if element3 is hidden
+  }
+}
+   
+   
+
+}
+
+    
+      function open_form(){
+        
+        var c=document.getElementById("footer");
+        c.classList.toggle("active");
+
+        var fopen=document.getElementById("form-popup");
+        fopen.classList.toggle("active");
+
+
+        var cd=document.getElementById("flightsSection");
+        cd.classList.toggle("active");
+
+        var cde=document.getElementById("travellerSection");
+        cde.classList.toggle("active");
+
+
+        
+
+
+      }
+    </script>
+        
+        
+
+    <!-- =========== Scripts =========  -->
+    <script>
+
+        // add hovered class to selected list item
+       let list = document.querySelectorAll(".navigation li");
+
+       function activeLink() {
+            list.forEach((item) => {
+                item.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+
+         list.forEach((item) => item.addEventListener("mouseover", activeLink));
+        
+        //selecting dashboard as default
+        let sel = document.getElementById("default");
+        sel.classList.add("hovered");
+        // Menu Toggle
+       let toggle = document.querySelector(".toggle");
+       let navigation = document.querySelector(".navigation");
+       let main = document.querySelector(".main");
+       
+       
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+            
+            
+        };
+
+
+       
+
+
+       
+
+    </script>
+    
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            document.getElementById('flightsSection').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+
+    <!-- submitting all 4 forms to controller -->
+    <script>
+
+      function validateAndSubmit() {
+      
+      
+      var baap = document.getElementById("combineAll");
+      
+      var a=document.getElementById("hidden_1_1");
+      var b=document.getElementById("hidden_1_2");
+      var c=document.getElementById("hidden_1_3");
+      var d=document.getElementById("hidden_1_4");
+      
+      var e=document.getElementById("hidden_2_1");
+      var f=document.getElementById("hidden_2_2");
+      var g=document.getElementById("hidden_2_3");
+      var h=document.getElementById("hidden_2_4");
+      
+      var i=document.getElementById("hidden_3_1");
+      var j=document.getElementById("hidden_3_2");
+      var k=document.getElementById("hidden_3_3");
+      var l=document.getElementById("hidden_3_4");
+      
+      var m=document.getElementById("hidden_4_1");
+      var n=document.getElementById("hidden_4_2");
+      var o=document.getElementById("hidden_4_3");
+      var p=document.getElementById("hidden_4_4");
+      
+
+        //getting all forms
+        var f1 = document.getElementsByClassName("MultipleRecord_1")[0];
+        var f2 = document.getElementsByClassName("MultipleRecord_2")[0];
+        var f3 = document.getElementsByClassName("MultipleRecord_3")[0];
+        var f4 = document.getElementsByClassName("MultipleRecord_4")[0];
+        
+        var f1_a=document.getElementsByName("firstName_1")[0];
+        var f1_b=document.getElementsByName("lastName_1")[0];
+        var f1_c=document.getElementsByName("age_1")[0];
+        var f1_d=document.getElementsByName("nation_1")[0];
+        
+        var f2_a=document.getElementsByName("firstName_2")[0];
+        var f2_b=document.getElementsByName("lastName_2")[0];
+        var f2_c=document.getElementsByName("age_2")[0];
+        var f2_d=document.getElementsByName("nation_2")[0];
+        
+        var f3_a=document.getElementsByName("firstName_3")[0];
+        var f3_b=document.getElementsByName("lastName_3")[0];
+        var f3_c=document.getElementsByName("age_3")[0];
+        var f3_d=document.getElementsByName("nation_3")[0];
+        
+        var f4_a=document.getElementsByName("firstName_4")[0];
+        var f4_b=document.getElementsByName("lastName_4")[0];
+        var f4_c=document.getElementsByName("age_4")[0];
+        var f4_d=document.getElementsByName("nation_4")[0];
+
+
+        var isValid=true;
+
+        var isAllAreEmpty=true;
+
+
+        // form-1
+        //first check whether any entity filled or not
+        if(f1_a.value || f1_b.value || f1_c.value || f1_d.value){
+           
+          // now check wether all are filled or not
+          
+          if(f1_a.value && f1_b.value && f1_c.value && f1_d.value){
+            //here we can submit this form
+            //f1.submit();
+            a.value=f1_a.value;
+            b.value=f1_b.value;
+            c.value=f1_c.value;
+            d.value=f1_d.value;
+            
+            isAllAreEmpty=false;
+          }
+
+          else{
+            isValid=false;
+          }
+
+        }
+
+        else{
+           // no problem as all are empty
+        }
+
+        // form-2
+        //first check whether any entity filled or not
+        if(f2_a.value || f2_b.value || f2_c.value || f2_d.value){
+           
+           // now check wether all are filled or not
+           if(f2_a.value && f2_b.value && f2_c.value && f2_d.value){
+            //here we can submit this form
+            //f2.submit();
+            e.value=f2_a.value;
+            f.value=f2_b.value;
+            g.value=f2_c.value;
+            h.value=f2_d.value;
+            
+            isAllAreEmpty=false;
+           }
+ 
+           else{
+            isValid=false;
+           }
+ 
+         }
+ 
+         else{
+           // no problem as all are empty
+         }
+         
+         
+         // form-3
+        //first check whether any entity filled or not
+        if(f3_a.value || f3_b.value || f3_c.value || f3_d.value){
+           
+           // now check wether all are filled or not
+           if(f3_a.value && f3_b.value && f3_c.value && f3_d.value){
+            //here we can submit this form
+            //f3.submit();
+            i.value=f3_a.value;
+            j.value=f3_b.value;
+            k.value=f3_c.value;
+            l.value=f3_d.value;
+            
+            isAllAreEmpty=false;
+           }
+ 
+           else{
+            isValid=false;
+           }
+ 
+         }
+ 
+         else{
+           // no problem as all are empty
+         }
+         
+         // form-4
+        //first check whether any entity filled or not
+        if(f4_a.value || f4_b.value || f4_c.value || f4_d.value){
+           
+           // now check wether all are filled or not
+           if(f4_a.value && f4_b.value && f4_c.value && f4_d.value){
+            //here we can submit this form
+            //f4.submit();
+            m.value=f4_a.value;
+            n.value=f4_b.value;
+            o.value=f4_c.value;
+            p.value=f4_d.value;
+            
+            isAllAreEmpty=false;
+           }
+ 
+           else{
+            isValid=false;
+           }
+ 
+         }
+ 
+         else{
+           // no problem as all are empty
+         }
+
+
+         if(isAllAreEmpty || !isValid){
+          alert("Error");
+         }
+         
+         else{
+           baap.submit();
+         }
+        
+      }
+
+    </script>
+
+
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const listItems = document.querySelectorAll('.navigation ul li');
+            
+            // Function to handle the click event
+            const handleClick = (item) => {
+                listItems.forEach(li => {
+                    li.classList.remove('hovered');
+                    li.style.backgroundColor = '';
+                    const link = li.querySelector('a');
+                    if (link) link.style.color = '';
+                });
+
+                item.classList.add('hovered');
+                item.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--white');
+                const link = item.querySelector('a');
+                if (link) link.style.color = getComputedStyle(document.documentElement).getPropertyValue('--blue');
+            };
+
+            // Add click event listener to each list item
+            listItems.forEach(item => {
+                item.addEventListener('click', () => handleClick(item));
+            });
+
+            // Make the first list item selected by default
+            if (listItems.length > 0) {
+                handleClick(listItems[1]);
+            }
+        });
+    </script>
+    
+    
+    
+    <script>
+    
+            var gp = document.getElementById("aboutUs");
+            var hp = document.getElementById("travellerSection");
+            var wp = document.getElementById("flightsSection");
+            var ip = document.getElementById("service-section");
+            var jp = document.getElementById("contact-section");
+            
+            var pro = document.getElementById("profile");
+
+            function dashboard() {
+                console.log("dash");
+                if (gp) gp.style.display = "none";
+                if (hp) hp.style.display = "block";
+                if (wp) wp.style.display = "block";
+                if (ip) ip.style.display = "none";
+                if (jp) jp.style.display = "none";
+                pro.style.display="none";
+            }
+
+            function about() {
+                console.log("about");
+                if (gp) gp.style.display = "block";
+                if (hp) hp.style.display = "none";
+                if (wp) wp.style.display = "none";
+                if (ip) ip.style.display = "none";
+                if (jp) jp.style.display = "none";
+                pro.style.display="none";
+            }
+
+            function service() {
+                console.log("service");
+                if (gp) gp.style.display = "none";
+                if (hp) hp.style.display = "none";
+                if (wp) wp.style.display = "none";
+                if (ip) ip.style.display = "block";
+                if (jp) jp.style.display = "none";
+                pro.style.display="none";
+            }
+
+            function contact() {
+                console.log("contact");
+                if (gp) gp.style.display = "none";
+                if (hp) hp.style.display = "none";
+                if (wp) wp.style.display = "none";
+                if (ip) ip.style.display = "none";
+                if (jp) jp.style.display = "block";
+                pro.style.display="none";
+            }
+            
+            function signout(){
+       
+           window.location.href="/signout";
+           
+       }
+       
+       
+       function profile(){
+         if (gp) gp.style.display = "none";
+                if (gp) gp.style.display = "none";
+                if (hp) hp.style.display = "none";
+                if (wp) wp.style.display = "none";
+                if (ip) ip.style.display = "none";
+                if (jp) jp.style.display = "none";
+         
+         pro.style.display="block";
+         
+         
+       }
+       
+    
+       
+    </script>
+
+</body>
+
+</html>
