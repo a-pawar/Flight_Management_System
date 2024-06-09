@@ -35,4 +35,4 @@ ADMINISTRATOR FEATURES:
 
 •	Cancel or modify flight, schedule, and route details as needed.
 
-[embed]https://github.com/a-pawar/Flight_Management_System/blob/main/Flight%20Management%20System%20Project%20Presentation%20(2).pdf[/embed]
+[embed](https://github.com/a-pawar/Flight_Management_System/blob/main/Flight%20Management%20System%20Project%20Presentation%20(2).pdf)[/embed]
