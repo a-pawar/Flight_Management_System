@@ -35,4 +35,18 @@ ADMINISTRATOR FEATURES:
 
 •	Cancel or modify flight, schedule, and route details as needed.
 
-[embed](https://github.com/a-pawar/Flight_Management_System/blob/main/Flight%20Management%20System%20Project%20Presentation%20(2).pdf)[/embed]
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0001.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0002.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0003.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0004.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0005.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0006.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0007.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0008.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0009.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0010.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0011.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0012.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0013.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0014.jpg)
+![alt text](https://github.com/a-pawar/Flight_Management_System/blob/main/images/Flight%20Management%20System%20Project%20Presentation%20(2)_page-0015.jpg)
